@@ -16,13 +16,8 @@
 {/if}
 <hr>
     <a href="mailto:{$g_site_mail|escape:'html'}">{$g_title|escape:'html'}</a><p />
-    <a href="http://www.aviddocuworks.com/" target="_new">aviddocuworks</a><br />
+    <a href="http://www.avidian.com/" target="_new">Avidian</a><br />
     Copyright &copy; 2000-2021 Stephen Lawrence Jr.<br />
-    <p>
-        <a href="http://www.aviddocuworks.com/forum/" target="_new">{$g_lang_footer_support}</a> |
-        <a href="http://aviddocuworks.uservoice.com" target="_new">{$g_lang_footer_feedback}</a> |
-        <a href="https://github.com/aviddocuworks/aviddocuworks/issues" target="_new">{$g_lang_footer_bugs}</a> |
-    </p>
 </body>
 </html>
 

@@ -158,22 +158,22 @@ deny from all
 	<table class="form-table">
 		<tr>
 			<th scope="row"><label for="dbname">Database Name</label></th>
-			<td><input name="dbname" id="dbname" type="text" size="25" value="<?php echo ($_ENV['APP_DB_NAME'] ? $_ENV['APP_DB_NAME'] : 'aviddocuworks'); ?>" class="required" minlength="2" /></td>
+			<td><input name="dbname" id="dbname" type="text" size="25" value="<?php echo ($_ENV['APP_DB_NAME'] ? $_ENV['APP_DB_NAME'] : 'avid'); ?>" class="required" minlength="2" /></td>
 			<td>The name of the database you want to run Avid DocuWorks in. </td>
 		</tr>
 		<tr>
 			<th scope="row"><label for="uname">User Name</label></th>
-			<td><input name="uname" id="uname" type="text" size="25" value="<?php echo ($_ENV['APP_DB_USER'] ? $_ENV['APP_DB_USER'] : 'aviddocuworks'); ?>" class="required" minlength="2"/></td>
+			<td><input name="uname" id="uname" type="text" size="25" value="<?php echo ($_ENV['APP_DB_USER'] ? $_ENV['APP_DB_USER'] : 'avid'); ?>" class="required" minlength="2"/></td>
 			<td>Your MySQL username</td>
 		</tr>
 		<tr>
 			<th scope="row"><label for="pwd">Password</label></th>
-			<td><input name="pwd" id="pwd" type="password" size="25" value="<?php echo ($_ENV['APP_DB_PASS'] ? $_ENV['APP_DB_PASS'] : 'aviddocuworks'); ?>" /></td>
+			<td><input name="pwd" id="pwd" type="password" size="25" value="<?php echo ($_ENV['APP_DB_PASS'] ? $_ENV['APP_DB_PASS'] : 'avidawesomepassword'); ?>" /></td>
 			<td>...and MySQL password.</td>
 		</tr>
 		<tr>
 			<th scope="row"><label for="dbhost">Database Host</label></th>
-			<td><input name="dbhost" id="dbhost" type="text" size="25" value="<?php echo ($_ENV['APP_DB_HOST'] ? $_ENV['APP_DB_HOST'] : 'localhost') ?>" class="required" minlength="2"/></td>
+			<td><input name="dbhost" id="dbhost" type="text" size="25" value="<?php echo ($_ENV['APP_DB_HOST'] ? $_ENV['APP_DB_HOST'] : 'db') ?>" class="required" minlength="2"/></td>
 			<td>You should be able to get this info from your web host, if <code>localhost</code> does not work.
                             It can also include a port number. e.g. "hostname;port=3306" or a path to a local socket e.g. ":/path/to/socket" for the localhost.
                         </td>
@@ -190,7 +190,7 @@ deny from all
 		</tr>
 		<tr>
 			<th scope="row"><label for="prefix">Data Directory</label></th>
-			<td colspan="2"><input name="datadir" id="datadir" type="text" value="<?php echo ($_ENV['ODM_DATA_DIR'] ? $_ENV['ODM_DATA_DIR'] : dirname($_SERVER['DOCUMENT_ROOT']) . '/odm_data/');?>" size="45" class="required" minlength="2"/>
+			<td colspan="2"><input name="datadir" id="datadir" type="text" value="<?php echo ($_ENV['ODM_DATA_DIR'] ? $_ENV['ODM_DATA_DIR'] : dirname($_SERVER['DOCUMENT_ROOT']) . '/html/odm_data/');?>" size="45" class="required" minlength="2"/>
                             <br/>Enter in a web-writable folder that you have created on your server to store the data files. We have tried to guess for one.<br/>
                             <ul>
                                 <li><em>Windows Example:</em> c:/document_repository/</li>
