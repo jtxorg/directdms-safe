@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS avid;
+CREATE USER 'avid'@'%' IDENTIFIED BY 'avidawesomepassword';
+GRANT ALL PRIVILEGES ON avid.* TO 'avid'@'%';
+FLUSH PRIVILEGES;
