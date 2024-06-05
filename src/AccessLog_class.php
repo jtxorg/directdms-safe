@@ -40,7 +40,7 @@ class AccessLog extends Plugin
         $this->name = 'AccessLog';
         $this->author = 'Stephen Lawrence Jr';
         $this->version = '1.0';
-        $this->homepage = 'http://www.Avid DocuWorks.com';
+        $this->homepage = 'http://www.avidian.com';
         $this->description = 'AccessLog Plugin for Avid DocuWorks';
         
         $this->accesslog = $_accesslog;
