@@ -14,13 +14,15 @@ RUN apt-get update && apt-get install -y \
 # Enable Apache mod_rewrite and SSL
 RUN a2enmod rewrite ssl
 
-# Create directories for Let's Encrypt certificates and webroot challenge
+# Create a temporary self-signed certificate
 RUN mkdir -p /etc/letsencrypt/live/standarddms.mytruecloud.com \
-    && mkdir -p /var/www/certbot/.well-known/acme-challenge \
-    && chown -R www-data:www-data /etc/letsencrypt \
-    && chown -R www-data:www-data /var/www/certbot
+    && openssl req -x509 -nodes -newkey rsa:2048 -days 1 \
+    -keyout /etc/letsencrypt/live/standarddms.mytruecloud.com/privkey.pem \
+    -out /etc/letsencrypt/live/standarddms.mytruecloud.com/fullchain.pem \
+    -subj '/CN=localhost'
 
-# Copy SSL configuration file from config directory
+# Copy HTTP and HTTPS configuration files from config directory
+COPY config/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY config/000-default-ssl.conf /etc/apache2/sites-available/000-default-ssl.conf
 
 # Copy the startup script
@@ -29,7 +31,8 @@ COPY start-apache.sh /usr/local/bin/start-apache.sh
 # Ensure the startup script is executable
 RUN chmod +x /usr/local/bin/start-apache.sh
 
-# Enable SSL site configuration
+# Enable HTTP and SSL site configuration
+RUN a2ensite 000-default
 RUN a2ensite 000-default-ssl
 
 # Ensure the www-data user owns the directory and has write permissions
