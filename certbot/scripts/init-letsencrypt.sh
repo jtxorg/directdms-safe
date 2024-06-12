@@ -1,6 +1,6 @@
 #!/bin/sh
 
-domain="standarddms.mytruecloud.com"
+domain="≈"
 rsa_key_size=4096
 data_path="/etc/letsencrypt"
 email="baggio@rsttechnology.com"
