@@ -16,7 +16,7 @@ RUN a2enmod rewrite ssl
 
 # Create a temporary self-signed certificate
 RUN mkdir -p /etc/letsencrypt/live/standarddms.mytruecloud.com \
-    && openssl req -x509 -nodes -newkey rsa:2048 -days 1\
+    && openssl req -x509 -nodes -newkey rsa:2048 -days 1 \
     -keyout /etc/letsencrypt/live/standarddms.mytruecloud.com/privkey.pem \
     -out /etc/letsencrypt/live/standarddms.mytruecloud.com/fullchain.pem \
     -subj '/CN=localhost'
@@ -38,3 +38,4 @@ EXPOSE 80 443
 
 # Run Apache server in the foreground
 CMD ["apache2-foreground"]
+

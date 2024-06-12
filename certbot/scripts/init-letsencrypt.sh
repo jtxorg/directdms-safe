@@ -11,7 +11,6 @@ if [ -d "$data_path/live/${domains[0]}" ]; then
 else
   echo "### Requesting Let's Encrypt certificate for ${domains[0]} ..."
 
-  # Join $domains to -d args
   domain_args=""
   for domain in "${domains[@]}"; do
     domain_args="$domain_args -d $domain"
