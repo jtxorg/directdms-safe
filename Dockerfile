@@ -18,8 +18,11 @@ RUN openssl req -x509 -nodes -newkey rsa:2048 -days 1 \
     -out /etc/letsencrypt/live/standarddms.mytruecloud.com/fullchain.pem \
     -subj '/CN=localhost'
 
-# Copy Nginx configuration file from config directory
+# Copy Nginx configuration file
 COPY config/nginx.conf /etc/nginx/nginx.conf
+
+# Copy server block configuration file
+COPY config/default.conf /etc/nginx/conf.d/default.conf
 
 # Copy the startup script
 COPY start-nginx.sh /usr/local/bin/start-nginx.sh
