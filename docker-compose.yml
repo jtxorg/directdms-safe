@@ -21,11 +21,7 @@ services:
     volumes:
       - src_volume:/var/www/html
       - file_store:/var/www/file_store
-    environment:
-      PHP_UPLOAD_MAX_FILESIZE: "1G"
-      PHP_POST_MAX_SIZE: "1G"
-      PHP_MEMORY_LIMIT: "256M"
-      PHP_MAX_EXECUTION_TIME: "300"
+      - ./config/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
     expose:
       - "9000"
     depends_on:
