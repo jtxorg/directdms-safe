@@ -4,7 +4,7 @@ domain="standarddms.mytruecloud.com"
 rsa_key_size=4096
 data_path="/etc/letsencrypt"
 email="baggio@rsttechnology.com"
-staging=0
+staging=1
 
 if [ -d "$data_path/live/$domain" ]; then
   echo "Existing certificate found for $domain. Skipping certificate request."
