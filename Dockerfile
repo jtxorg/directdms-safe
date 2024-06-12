@@ -14,12 +14,11 @@ RUN apt-get update && apt-get install -y \
 # Enable Apache mod_rewrite and SSL
 RUN a2enmod rewrite ssl
 
-# Create a temporary self-signed certificate
+# Create directories for Let's Encrypt certificates and webroot challenge
 RUN mkdir -p /etc/letsencrypt/live/standarddms.mytruecloud.com \
-    && openssl req -x509 -nodes -newkey rsa:2048 -days 1 \
-    -keyout /etc/letsencrypt/live/standarddms.mytruecloud.com/privkey.pem \
-    -out /etc/letsencrypt/live/standarddms.mytruecloud.com/fullchain.pem \
-    -subj '/CN=localhost'
+    && mkdir -p /var/www/certbot/.well-known/acme-challenge \
+    && chown -R www-data:www-data /etc/letsencrypt \
+    && chown -R www-data:www-data /var/www/certbot
 
 # Copy SSL configuration file from config directory
 COPY config/000-default-ssl.conf /etc/apache2/sites-available/000-default-ssl.conf
