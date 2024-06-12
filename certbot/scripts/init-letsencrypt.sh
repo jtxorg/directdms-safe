@@ -30,5 +30,3 @@ else
     --non-interactive
 fi
 
-echo "### Reloading Nginx ..."
-docker exec $(docker ps -qf "name=nginx") nginx -s reload
