@@ -1,17 +1,31 @@
-FROM php:7.4-fpm
+FROM nginx:latest
 
-# Install necessary PHP extensions
-RUN apt-get update && apt-get install -y \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd mysqli pdo pdo_mysql
+# Install OpenSSL for generating self-signed certificates
+RUN apt-get update && apt-get install -y openssl
 
-# Copy source files
-COPY src/ /var/www/html
+# Create directories for Let's Encrypt certificates and webroot challenge
+RUN mkdir -p /etc/letsencrypt/live/standarddms.mytruecloud.com \
+    && mkdir -p /var/www/certbot/.well-known/acme-challenge \
+    && chown -R www-data:www-data /etc/letsencrypt \
+    && chown -R www-data:www-data /var/www/certbot
 
-# Ensure the www-data user owns the directory and has write permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && find /var/www/html -type d -exec chmod 755 {} \; \
-    && find /var/www/html -type f -exec chmod 644 {} \;
+# Generate a temporary self-signed certificate
+RUN openssl req -x509 -nodes -newkey rsa:2048 -days 1 \
+    -keyout /etc/letsencrypt/live/standarddms.mytruecloud.com/privkey.pem \
+    -out /etc/letsencrypt/live/standarddms.mytruecloud.com/fullchain.pem \
+    -subj '/CN=localhost'
+
+# Copy Nginx configuration file from config directory
+COPY config/nginx.conf /etc/nginx/nginx.conf
+
+# Copy the startup script
+COPY start-nginx.sh /usr/local/bin/start-nginx.sh
+
+# Ensure the startup script is executable
+RUN chmod +x /usr/local/bin/start-nginx.sh
+
+# Expose ports 80 and 443
+EXPOSE 80 443
+
+# Use the startup script as the entrypoint
+ENTRYPOINT ["start-nginx.sh"]
