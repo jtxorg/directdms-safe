@@ -18,6 +18,8 @@ services:
     build: .
     volumes:
       - src_volume:/var/www/html
+    expose:
+      - "9000"
 
   db:
     image: mysql:5.7
