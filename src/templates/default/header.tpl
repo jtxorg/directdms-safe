@@ -32,7 +32,7 @@
 <table width="100%" cellspacing="0" cellpadding="0">
     <tr>
         <td align="left">
-            <a href="{$g_base_url|escape:'html'}out.php">
+            <a href="{$g_base_url|escape:'html'}/out.php">
                 <img src="{$g_base_url|escape:'html'}/images/logo.png" title="{$site_title|escape:'html'}" alt="{$site_title|escape:'html'}" border="0">
             </a>
         </td>
@@ -40,16 +40,16 @@
             <p>
                 <div class="buttons">
                     {if $can_checkin || $isadmin eq 'yes'}
-                <a href="{$g_base_url|escape:'html'}in.php" class="regular"><img src="{$g_base_url|escape:'html'}/images/import-2.png" alt="check in"/>{$g_lang_button_check_in}</a>
+                <a href="{$g_base_url|escape:'html'}/in.php" class="regular"><img src="{$g_base_url|escape:'html'}/images/import-2.png" alt="check in"/>{$g_lang_button_check_in}</a>
                 {/if}
-                <a href="{$g_base_url|escape:'html'}search.php" class="regular"><img src="{$g_base_url|escape:'html'}/images/find-new-users.png" alt="search"/>{$g_lang_search}</a>
+                <a href="{$g_base_url|escape:'html'}/search.php" class="regular"><img src="{$g_base_url|escape:'html'}/images/find-new-users.png" alt="search"/>{$g_lang_search}</a>
                 {if $can_add || $isadmin eq 'yes'}
-                    <a href="{$g_base_url|escape:'html'}add.php" class="regular"><img src="{$g_base_url|escape:'html'}/images/plus.png" alt="add file"/>{$g_lang_button_add_document}</a>
+                    <a href="{$g_base_url|escape:'html'}/add.php" class="regular"><img src="{$g_base_url|escape:'html'}/images/plus.png" alt="add file"/>{$g_lang_button_add_document}</a>
                 {/if}
             {if $isadmin eq 'yes'}
-                <a href="{$g_base_url|escape:'html'}admin.php" class="positive"><img src="{$g_base_url|escape:'html'}/images/control.png" alt="admin"/>{$g_lang_label_admin}</a>
+                <a href="{$g_base_url|escape:'html'}/admin.php" class="positive"><img src="{$g_base_url|escape:'html'}/images/control.png" alt="admin"/>{$g_lang_label_admin}</a>
             {/if}
-                <a href="{$g_base_url|escape:'html'}logout.php" class="negative">{$g_lang_logout}</a>
+                <a href="{$g_base_url|escape:'html'}/logout.php" class="negative">{$g_lang_logout}</a>
             </div>
             </p>
         </td>
