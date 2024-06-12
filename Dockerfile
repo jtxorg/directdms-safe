@@ -24,6 +24,12 @@ RUN mkdir -p /etc/letsencrypt/live/standarddms.mytruecloud.com \
 # Copy SSL configuration file from config directory
 COPY config/000-default-ssl.conf /etc/apache2/sites-available/000-default-ssl.conf
 
+# Copy the startup script
+COPY start-apache.sh /usr/local/bin/start-apache.sh
+
+# Ensure the startup script is executable
+RUN chmod +x /usr/local/bin/start-apache.sh
+
 # Enable SSL site configuration
 RUN a2ensite 000-default-ssl
 
@@ -36,6 +42,5 @@ RUN mkdir -p /var/www/html \
 # Expose ports 80 and 443
 EXPOSE 80 443
 
-# Run Apache server in the foreground
-CMD ["apache2-foreground"]
-
+# Use the startup script as the entrypoint
+ENTRYPOINT ["start-apache.sh"]
