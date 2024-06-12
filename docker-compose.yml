@@ -15,7 +15,7 @@ services:
       - certbot
 
   php:
-    image: richarvey/nginx-php-fpm:latest
+    image: php:7.4-fpm
     volumes:
       - src_volume:/var/www/html
     expose:
