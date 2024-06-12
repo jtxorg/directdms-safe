@@ -1,5 +1,5 @@
 services:
-  web:
+  apache:
     build: .
     ports:
       - "80:80"
@@ -18,7 +18,7 @@ services:
       - db
       - certbot
 
-  db:
+  mysql:
     image: mysql:5.7
     restart: always
     environment:
