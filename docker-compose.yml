@@ -21,6 +21,11 @@ services:
     volumes:
       - src_volume:/var/www/html
       - file_store:/var/www/file_store
+    environment:
+      PHP_UPLOAD_MAX_FILESIZE: "0"
+      PHP_POST_MAX_SIZE: "0"
+      PHP_MEMORY_LIMIT: "256M"
+      PHP_MAX_EXECUTION_TIME: "300"
     expose:
       - "9000"
     depends_on:
