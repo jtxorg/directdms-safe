@@ -26,8 +26,9 @@ else
     $domain_args \
     --rsa-key-size $rsa_key_size \
     --agree-tos \
-    --force-renewal
+    --force-renewal \
+    --non-interactive
 fi
 
 echo "### Reloading Apache ..."
-docker-compose exec apache apachectl -k graceful
+docker exec $(docker-compose ps -q apache) apachectl -k graceful
