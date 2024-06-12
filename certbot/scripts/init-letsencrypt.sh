@@ -1,20 +1,17 @@
 #!/bin/sh
 
-domains=(standarddms.mytruecloud.com)
+domain="standarddms.mytruecloud.com"
 rsa_key_size=4096
 data_path="/etc/letsencrypt"
 email="jbaggio@rsttechnology.com"
 staging=0
 
-if [ -d "$data_path/live/${domains[0]}" ]; then
-  echo "Existing certificate found for ${domains[0]}. Skipping certificate request."
+if [ -d "$data_path/live/$domain" ]; then
+  echo "Existing certificate found for $domain. Skipping certificate request."
 else
-  echo "### Requesting Let's Encrypt certificate for ${domains[0]} ..."
+  echo "### Requesting Let's Encrypt certificate for $domain ..."
 
-  domain_args=""
-  for domain in "${domains[@]}"; do
-    domain_args="$domain_args -d $domain"
-  done
+  domain_args="-d $domain"
 
   case "$email" in
     "") email_arg="--register-unsafely-without-email" ;;
