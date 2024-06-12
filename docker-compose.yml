@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
-  apache:
-    build: .
+  nginx:
+    image: nginx:latest
     ports:
       - "80:80"
       - "443:443"
@@ -10,21 +8,25 @@ services:
       - src_volume:/var/www/html
       - certbot-etc:/etc/letsencrypt
       - certbot-www:/var/www/certbot
-    environment:
-      - DB_HOST=mysql
-      - DB_PORT=3306
-      - DB_DATABASE=avid
-      - DB_USERNAME=avid
-      - DB_PASSWORD=avidawesomepassword
+      - ./config/nginx.conf:/etc/nginx/nginx.conf
+      - ./config/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
-      - mysql
+      - php
       - certbot
 
-  mysql:
+  php:
+    build: .
+    volumes:
+      - src_volume:/var/www/html
+
+  db:
     image: mysql:5.7
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: awesomerootpassword
+      MYSQL_DATABASE: avid
+      MYSQL_USER: avid
+      MYSQL_PASSWORD: avidawesomepassword
     volumes:
       - db_data:/var/lib/mysql
       - ./db_init:/docker-entrypoint-initdb.d
