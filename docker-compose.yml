@@ -12,11 +12,17 @@ services:
       - ./config/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php
+      - db
 
   php:
-    build: .
+    image: richarvey/nginx-php-fpm:latest
     volumes:
       - src_volume:/var/www/html
+    environment:
+      - PHP_DISPLAY_ERRORS=0
+      - PHP_MEMORY_LIMIT=512M
+      - PHP_POST_MAX_SIZE=500M
+      - PHP_UPLOAD_MAX_FILESIZE=500M
     expose:
       - "9000"
 
