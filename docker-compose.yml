@@ -15,7 +15,7 @@ services:
       - DB_USERNAME=avid
       - DB_PASSWORD=avidawesomepassword
     depends_on:
-      - db
+      - mysql
       - certbot
 
   mysql:
