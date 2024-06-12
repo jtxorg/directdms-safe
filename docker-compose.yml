@@ -36,7 +36,7 @@ services:
       - certbot-etc:/etc/letsencrypt
       - certbot-www:/var/www/certbot
       - ./certbot/scripts:/scripts
-    entrypoint: ["/bin/bash", "/scripts/init-letsencrypt.sh"]
+    entrypoint: ["/bin/sh", "/scripts/init-letsencrypt.sh"]
 
 volumes:
   src_volume:
