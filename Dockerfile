@@ -1,7 +1,10 @@
 FROM nginx:latest
 
-# Install OpenSSL for generating self-signed certificates
-RUN apt-get update && apt-get install -y openssl
+# Install OpenSSL for generating self-signed certificates and Certbot
+RUN apt-get update && apt-get install -y \
+    openssl \
+    certbot \
+    python3-certbot-nginx
 
 # Create directories for Let's Encrypt certificates and webroot challenge
 RUN mkdir -p /etc/letsencrypt/live/standarddms.mytruecloud.com \
@@ -28,4 +31,4 @@ RUN chmod +x /usr/local/bin/start-nginx.sh
 EXPOSE 80 443
 
 # Use the startup script as the entrypoint
-ENTRYPOINT ["start-nginx.sh"]
+ENTRYPOINT ["/usr/local/bin/start-nginx.sh"]
