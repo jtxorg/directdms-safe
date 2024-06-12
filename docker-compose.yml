@@ -15,7 +15,9 @@ services:
       - certbot
 
   php:
-    image: php:7.4-fpm
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - src_volume:/var/www/html
     expose:
