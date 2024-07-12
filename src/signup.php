@@ -103,7 +103,7 @@ if ($GLOBALS['CONFIG']['allow_signup'] == 'True') {
     ?>
 
     <div>
-        <img src="{$g_base_url}/images/logo.png" title="{$site_title|escape:'html'}" alt="{$site_title|escape:'html'}" border="0" />
+        <img src="images/logo.png" alt="DirectRM" border=0 />
     </div>
 
             <font size=6>Sign Up</font>
