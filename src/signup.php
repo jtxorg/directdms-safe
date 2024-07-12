@@ -94,7 +94,9 @@ if ($GLOBALS['CONFIG']['allow_signup'] == 'True') {
     }
     ?>
         <html>
-        <head><title>Sign Up</title></head>
+        <head><title>Sign Up</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        </head>
         <body>
 <?php
     if (is_readable("signup_header.html")) {
