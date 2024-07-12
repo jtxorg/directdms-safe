@@ -41,7 +41,7 @@ class AccessLog extends Plugin
         $this->author = 'Stephen Lawrence Jr';
         $this->version = '1.0';
         $this->homepage = 'http://www.avidian.com';
-        $this->description = 'AccessLog Plugin for Avid DocuWorks';
+        $this->description = 'AccessLog Plugin for DirectRM';
         
         $this->accesslog = $_accesslog;
     }

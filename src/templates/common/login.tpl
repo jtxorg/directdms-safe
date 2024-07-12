@@ -7,7 +7,7 @@
         <body bgcolor="White" style="margin-left:10px;">
         <table cellspacing="0" cellpadding="0">
         <tr>
-        <td align="left"><img src="images/logo.png" alt="Avid DocuWorks" border=0></td>
+        <td align="left"><img src="images/logo.png" alt="DirectRM" border=0></td>
         </tr>
         </table>
 

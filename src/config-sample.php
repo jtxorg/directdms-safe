@@ -17,14 +17,14 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 
-// Avid DocuWorks sample config file
+// DirectRM sample config file
 
 // Eliminate multiple inclusions
 if (!defined('config')) {
     define('config', 'true', false);
 
     // config.php - you should not need to change these
-    /** The name of the database for [Avid DocuWorks] */
+    /** The name of the database for [DirectRM] */
     define('APP_DB_NAME', isset($_ENV['APP_DB_NAME']) ? $_ENV['APP_DB_NAME'] : 'database_name_here');
 
     /** MySQL database username */

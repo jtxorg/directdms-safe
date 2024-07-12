@@ -1,4 +1,4 @@
-# MySQL dump of Avid DocuWorks
+# MySQL dump of DirectRM
 #
 #--------------------------------------------------------
 

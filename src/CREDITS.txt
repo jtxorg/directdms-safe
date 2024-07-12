@@ -2,7 +2,7 @@
 
 See LICENSE file for details on the license for this software.
 
-== Avid DocuWOrks contributors and acknowledgments
+== DirectRM contributors and acknowledgments
 
 All code copyright Stephen Lawrence Jr. 2002-2011
 

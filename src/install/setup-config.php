@@ -51,7 +51,7 @@ define('ABSPATH', dirname(dirname(__FILE__)) . '/');
 /**#@-*/
 
 if (!file_exists(ABSPATH . 'config-sample.php')) {
-    echo('Sorry, I need a config-sample.php file to work from. Please re-upload this file from your Avid DocuWorks installation.');
+    echo('Sorry, I need a config-sample.php file to work from. Please re-upload this file from your DirectRM installation.');
     exit;
 }
 
@@ -81,14 +81,14 @@ function display_header()
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Avid DocuWorks &rsaquo; Setup Configuration File</title>
+<title>DirectRM &rsaquo; Setup Configuration File</title>
 <link rel="stylesheet" href="../templates/common/css/install.css" type="text/css" />
 <script type="text/javascript" src="../includes/jquery.min.js"></script>
 <script type="text/javascript" src="../includes/jquery.validate.min.js"></script>
 <script type="text/javascript" src="../includes/additional-methods.min.js"></script>
 </head>
 <body>
-<h1 id="logo"><img alt="Avid DocuWorks" src="../images/logo.png" /></h1>
+<h1 id="logo"><img alt="DirectRM" src="../images/logo.png" /></h1>
 <?php
 
 }//end function display_header();
@@ -98,15 +98,15 @@ switch ($step) {
         display_header();
 ?>
 
-<p>Welcome to Avid DocuWorks. Before getting started, we need some information on the database. You will need to know the following items before proceeding.</p>
+<p>Welcome to DirectRM. Before getting started, we need some information on the database. You will need to know the following items before proceeding.</p>
 <ol>
 	<li>Database name</li>
 	<li>Database username</li>
 	<li>Database password</li>
 	<li>Database host</li>
-	<li>Table prefix (if you want to run more than one Avid DocuWorks in a single database) </li>
+	<li>Table prefix (if you want to run more than one DirectRM in a single database) </li>
 </ol>
-<p><strong>You will also need to create a directory (your "dataDir") where you plan to store your uploaded files on the server.</strong> This directory must be writable by the web server but preferably NOT inside your public html folder. The main reason for locating the folder outside or your web document root is so that people won't be able to guess at a URL to directly access your files, bypassing the access restrictions that Avid DocuWorks puts in place.</p>
+<p><strong>You will also need to create a directory (your "dataDir") where you plan to store your uploaded files on the server.</strong> This directory must be writable by the web server but preferably NOT inside your public html folder. The main reason for locating the folder outside or your web document root is so that people won't be able to guess at a URL to directly access your files, bypassing the access restrictions that DirectRM puts in place.</p>
 <p>You can update your web server configuration file to prevent visitors from browsing your files directly.
 
 <?php
@@ -159,7 +159,7 @@ deny from all
 		<tr>
 			<th scope="row"><label for="dbname">Database Name</label></th>
 			<td><input name="dbname" id="dbname" type="text" size="25" value="<?php echo ($_ENV['APP_DB_NAME'] ? $_ENV['APP_DB_NAME'] : 'avid'); ?>" class="required" minlength="2" /></td>
-			<td>The name of the database you want to run Avid DocuWorks in. </td>
+			<td>The name of the database you want to run DirectRM in. </td>
 		</tr>
 		<tr>
 			<th scope="row"><label for="uname">User Name</label></th>
@@ -181,7 +181,7 @@ deny from all
 		<tr>
 			<th scope="row"><label for="prefix">Table Prefix</label></th>
 			<td><input name="prefix" id="prefix" type="text" value="odm_" size="8" class="required" minlength="2"/></td>
-			<td>If you want to run multiple Avid DocuWorks installations in a single database, change this.</td>
+			<td>If you want to run multiple DirectRM installations in a single database, change this.</td>
 		</tr>
                 <tr>
 			<th scope="row"><label for="adminpass">Administrator Password</label></th>
@@ -314,7 +314,7 @@ deny from all
         chmod($config_folder . 'config.php', 0666);
         display_header();
         ?>
-<p>Great! You've made it through this part of the installation. Avid DocuWorks can now communicate with your database. If you are ready, time now to&hellip;</p>
+<p>Great! You've made it through this part of the installation. DirectRM can now communicate with your database. If you are ready, time now to&hellip;</p>
 
 <p class="step"><a href="index.php" class="button">Run the install</a></p>
 <?php

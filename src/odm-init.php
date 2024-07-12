@@ -22,8 +22,8 @@
 // will be displayed asking the visitor to set up the
 // config.php file.
 //
-// Will also search for config.php in the Avid DocuWorks parent
-// directory to allow the Avid DocuWorks directory to remain
+// Will also search for config.php in the DirectRM parent
+// directory to allow the DirectRM directory to remain
 // untouched.
 
 require __DIR__ . '/vendor/autoload.php';

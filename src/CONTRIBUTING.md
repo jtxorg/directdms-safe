@@ -1,7 +1,7 @@
 # How to contribute
 
-Third-party patches are essential for keeping Avid DocuWorks improving. We cannot
-access the huge number of platforms for running Avid DocuWorks. We also want to keep it as 
+Third-party patches are essential for keeping DirectRM improving. We cannot
+access the huge number of platforms for running DirectRM. We also want to keep it as 
 easy as possible to contribute changes that get things working in your environment. 
 There are a few guidelines that we need contributors to follow so that we can 
 have a chance of keeping ontop of things.
@@ -55,7 +55,7 @@ an issue number.
     (doc) Add documentation commit example to CONTRIBUTING
 
     There is no example for contributing a documentation commit
-    to the Avid DocuWorks repository. This is a problem because the contributor
+    to the DirectRM repository. This is a problem because the contributor
     is left to assume how a commit of this nature may appear.
 
     The first line is a real life imperative statement with '(doc)' in
@@ -66,10 +66,10 @@ an issue number.
 
 ## Submitting Changes
 
-* By submitting code changes to the Avid DocuWorks project you agree to our 
-  [Contributors Agreement] (http://www.Avid DocuWorks.com/contributors-license-agreement/)
+* By submitting code changes to the DirectRM project you agree to our 
+  [Contributors Agreement] (http://www.DirectRM.com/contributors-license-agreement/)
 * Push your changes to a topic branch in your fork of the repository.
-* Submit a pull request to the repository in the Avid DocuWorks organization.
+* Submit a pull request to the repository in the DirectRM organization.
 * After feedback has been given we expect responses within two weeks. After two
   weeks will may close the pull request if it isn't showing any activity.
 
@@ -77,4 +77,4 @@ an issue number.
 
 * [General GitHub documentation](http://help.github.com/)
 * [GitHub pull request documentation](http://help.github.com/send-pull-requests/)
-* [Avid DocuWorks Contributors License Agreement] (http://www.Avid DocuWorks.com/contributors-license-agreement/)
+* [DirectRM Contributors License Agreement] (http://www.DirectRM.com/contributors-license-agreement/)

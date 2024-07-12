@@ -31,7 +31,7 @@ Table of Contents
 
 1 Introduction
 
-Avid DocuWorks is a full featured Web-based document management
+DirectRM is a full featured Web-based document management
 system designed to conform to ISO 17025/IEC. It features
 automatic installation, file expiration, multiple version
 handling, file check-in/out, departmental access control,
@@ -82,7 +82,7 @@ centralized repository.
   state and can be left there, un-archived, or permanently
   deleted.
 
-12. Bookmark-able URLs - You can bookmark a page in Avid DocuWorks
+12. Bookmark-able URLs - You can bookmark a page in DirectRM
   and email it to a co-worker, etc..
 
 13. Breadcrumb Navigation - As you navigate through the site,
@@ -116,11 +116,11 @@ centralized repository.
 
  To update your current version to the latest release:
 
- 1. Rename your current Avid DocuWorks folder.
+ 1. Rename your current DirectRM folder.
 
- 2. Unarchive Avid DocuWorks into a new folder and rename it to the original folder name
+ 2. Unarchive DirectRM into a new folder and rename it to the original folder name
 
- 3. Load the Avid DocuWorks page in your web browser ( ex. http://www.example.com/aviddocuworks/ )
+ 3. Load the DirectRM page in your web browser ( ex. http://www.example.com/aviddocuworks/ )
 
  4. You should follow the prompts for installation.
 
@@ -139,7 +139,7 @@ centralized repository.
 
   ex.  $>mkdir /usr/local/aviddocuworks/data
 
- 4. Load the Avid DocuWorks page in your web browser
+ 4. Load the DirectRM page in your web browser
 (ex. http://www.example.com/aviddocuworks/ ) and follow the prompts.
 
  5. Login as "admin" (with the password you set during the installation). 
@@ -182,7 +182,7 @@ centralized repository.
 
 3.1 Configuration values
 
-Most of the configuration for Avid DocuWorks is controlled by the Admin->Edit Settings page.
+Most of the configuration for DirectRM is controlled by the Admin->Edit Settings page.
 
 Below are some of the configurable options:
 

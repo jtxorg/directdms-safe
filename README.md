@@ -1,4 +1,4 @@
-# Avid DocuWorks Base Setup
+# DirectRM Base Setup
 
 ## NOTE - THIS DOESN'T WORK ANYMORE DUE TO REQUIRING SSL AND CERTBOT.
 ### I'll make a dev version soon. Anyhow, this is all garbage now:

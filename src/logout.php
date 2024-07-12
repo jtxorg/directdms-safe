@@ -38,7 +38,7 @@ if ($GLOBALS["CONFIG"]["authen"] == 'kerbauth') {
                     <tr>
                         <td width="100%" align="LEFT" bgcolor="#31639C"><img src="images/blue_left.gif" width="5"
                                                                              height="16" align="top"><b>&nbsp;Thank you
-                                for using Avid DocuWorks</b></td>
+                                for using DirectRM</b></td>
 
                     </tr>
                     <tr>
@@ -50,7 +50,7 @@ if ($GLOBALS["CONFIG"]["authen"] == 'kerbauth') {
                     <tr>
                         <td align="left">
                             <img src="/images/white_dot.gif" height="8"><br>
-                            Avid DocuWorks, and other campus web systems, use a cookie to store your credentials for access.
+                            DirectRM, and other campus web systems, use a cookie to store your credentials for access.
                             This cookie is kept only in your computers memory and not saved to disk for security
                             purposes. In order to remove this cookie from memory you must completely exit your browser.
                             The LOGOUT button below will close the current browser window, but this may not exit your

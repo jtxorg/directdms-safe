@@ -7,11 +7,11 @@ Check the docs folder for further documentation
 
  To update your current version to the latest release:
 
- 1. Rename your current Avid DocuWorks folder.
+ 1. Rename your current DirectRM folder.
 
- 2. Unarchive Avid DocuWorks into a new folder and rename it to the original folder name
+ 2. Unarchive DirectRM into a new folder and rename it to the original folder name
 
- 3. Load the Avid DocuWorks page in your web browser ( ex. http://www.example.com/Avid DocuWorks/ )
+ 3. Load the DirectRM page in your web browser ( ex. http://www.example.com/DirectRM/ )
 
  4. You should follow the prompts for installation.
 
@@ -33,7 +33,7 @@ Check the docs folder for further documentation
 
   ex.  $>mkdir /usr/local/aviddocuworks/data
 
- . Load the Avid DocuWorks page in your web browser
+ . Load the DirectRM page in your web browser
 (ex. http://www.example.com/aviddocuworks/ ) and follow the prompts.
 
  5. Login as "admin" (with the password you set during the installation). 

@@ -1,8 +1,8 @@
-# Avid DocuWorks
+# DirectRM
 
 Free PHP Document Management System DMS
 
-Avid DocuWorks is a web based document management system (DMS) written in PHP designed to comply with ISO 17025 and OIE standard for document management. It features fine grained control of access to files, and automated install and upgrades.
+DirectRM is a web based document management system (DMS) written in PHP designed to comply with ISO 17025 and OIE standard for document management. It features fine grained control of access to files, and automated install and upgrades.
 
 Features
 
