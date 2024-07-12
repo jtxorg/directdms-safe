@@ -101,7 +101,11 @@ if ($GLOBALS['CONFIG']['allow_signup'] == 'True') {
         include("signup_header.html");
     }
     ?>
-                
+
+    <div>
+        <img src="{$g_base_url}/images/logo.png" title="{$site_title|escape:'html'}" alt="{$site_title|escape:'html'}" border="0" />
+    </div>
+
             <font size=6>Sign Up</font>
         <br><script type="text/javascript" src="FormCheck.js"></script>
 
