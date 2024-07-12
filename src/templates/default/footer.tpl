@@ -16,7 +16,7 @@
 {/if}
 <hr>
     <a href="mailto:{$g_site_mail|escape:'html'}">{$g_title|escape:'html'}</a><p />
-    <a href="http://www.directrm.com/" target="_new">DirectRM, Inc.</a><br />
+    <a href="http://www.directrm.com/" target="_new">DirectRM Inc</a><br />
 </body>
 </html>
 
