@@ -40,7 +40,7 @@ class AccessLog extends Plugin
         $this->name = 'AccessLog';
         $this->author = 'Stephen Lawrence Jr';
         $this->version = '1.0';
-        $this->homepage = 'http://www.avidian.com';
+        $this->homepage = 'http://www.directrm.com';
         $this->description = 'AccessLog Plugin for DirectRM';
         
         $this->accesslog = $_accesslog;

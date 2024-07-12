@@ -14,7 +14,7 @@
       <hr>
 
       <footer>
-          <a href="http://www.avidian.com/">
+          <a href="http://www.directrm.com/">
                 <img src="{$g_base_url}/images/logo.png" title="{$site_title|escape:'html'}" alt="{$site_title|escape:'html'}" border="0">
             </a>
       </footer>
