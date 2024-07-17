@@ -10,6 +10,8 @@
     <!-- Le styles -->
 
     <link href="{$g_base_url}/templates/tweeter/css/tweeter.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style type="text/css">
         {literal}
       body {
@@ -50,9 +52,11 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="{$g_base_url|escape:'html'}/out.php">{$g_title|escape:'html'}</a>
+          TEST1
           <div class="nav-collapse collapse">
+            TEST2
             <ul class="nav">
-
+              TEST3
               <li class="active"><a href="{$g_base_url|escape:'html'}/out.php">{$g_lang_home}</a></li>
               {if $can_checkin || $isadmin eq 'yes'}
                 <li><a href="{$g_base_url}/in.php">{$g_lang_button_check_in}</a></li>
