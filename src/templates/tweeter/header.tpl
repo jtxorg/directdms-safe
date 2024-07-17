@@ -51,7 +51,6 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="{$g_base_url|escape:'html'}/out.php">{$g_title|escape:'html'}</a>
-          TEST1
           <div>
             <ul class="nav">
               <li class="active"><a href="{$g_base_url|escape:'html'}/out.php">{$g_lang_home}</a></li>
