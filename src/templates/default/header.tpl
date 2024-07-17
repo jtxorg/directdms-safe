@@ -3,7 +3,6 @@
     <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <title>{$g_title|escape:'html'} - {$page_title|escape:'html'}</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
         {literal}
         <script type="text/javascript">
