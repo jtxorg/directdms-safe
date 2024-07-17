@@ -8,9 +8,8 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-
-    <link href="{$g_base_url}/templates/tweeter/css/tweeter.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="{$g_base_url}/templates/tweeter/css/tweeter.css" rel="stylesheet">
 
     <style type="text/css">
         {literal}
