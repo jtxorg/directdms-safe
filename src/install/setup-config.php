@@ -88,7 +88,7 @@ function display_header()
 <script type="text/javascript" src="../includes/additional-methods.min.js"></script>
 </head>
 <body>
-<h1 id="logo"><img alt="DirectRM" src="../images/logo.png" /></h1>
+<h1 id="logo" style="text-align: center;"><img alt="DirectRM" src="../images/logo.png" /></h1>
 <?php
 
 }//end function display_header();

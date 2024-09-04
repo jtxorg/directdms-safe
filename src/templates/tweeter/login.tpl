@@ -42,7 +42,7 @@
 
         <table cellspacing="0" cellpadding="0">
         <tr>
-        <td align="left"><img src="images/logo.png" alt="Site Logo" border=0></td>
+        <td style="text-align: center;"><img src="images/logo.png" alt="Site Logo" border=0></td>
         </tr>
         </table>
 

@@ -29,7 +29,7 @@ if (false) {
         <title>Error: PHP is not running</title>
     </head>
     <body>
-    <h1 id="logo"><img alt="DirectRM" src="../images/logo.png"/></h1>
+    <h1 id="logo" style="text-align: center;"><img alt="DirectRM" src="../images/logo.png"/></h1>
 
     <h2>Error: PHP is not running</h2>
 
@@ -91,7 +91,7 @@ $_SESSION['db_prefix'] = !empty($_SESSION['db_prefix']) ? $_SESSION['db_prefix']
 
 <body>
 <div id="content">
-    <img src="../images/logo.png"><br>
+    <img src="../images/logo.png" style="text-align: center;"><br>
     <?php
 
     if (!isset($_REQUEST['op'])) {

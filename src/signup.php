@@ -104,7 +104,7 @@ if ($GLOBALS['CONFIG']['allow_signup'] == 'True') {
     }
     ?>
 
-    <div>
+    <div style="text-align: center;">
         <img src="images/logo.png" alt="DirectRM" border=0 />
     </div>
 

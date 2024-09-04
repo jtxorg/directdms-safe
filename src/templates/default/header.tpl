@@ -33,7 +33,7 @@
 <!-- ----------------UID is {$uid} ----------------- -->
 <table width="100%" cellspacing="0" cellpadding="0">
     <tr>
-        <td align="left">
+        <td align="left" style="text-align: center;">
             <a href="{$g_base_url|escape:'html'}/out.php">
                 <img src="{$g_base_url|escape:'html'}/images/logo.png" title="{$site_title|escape:'html'}" alt="{$site_title|escape:'html'}" border="0">
             </a>
