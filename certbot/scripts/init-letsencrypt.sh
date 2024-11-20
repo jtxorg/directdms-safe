@@ -1,6 +1,6 @@
 #!/bin/sh
 
-domain="directdms.mytruecloud.com"
+domain="vault.e-lockbox.com"
 rsa_key_size=4096
 data_path="/etc/letsencrypt"
 email="jbaggio@rsttechnology.com"
