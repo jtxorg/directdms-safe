@@ -2,14 +2,12 @@
         <head>
             <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <title>{$g_title}</title>
-                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
         </head>
 
         <body bgcolor="White" style="margin-left:10px;">
         <table cellspacing="0" cellpadding="0">
         <tr>
-        <td align="left"><img src="images/logo.png" alt="DirectRM" border=0></td>
+        <td align="left"><img src="images/logo.png" style="width:300px;" alt="Avid Docuworks" border=0></td>
         </tr>
         </table>
 

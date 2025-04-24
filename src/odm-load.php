@@ -21,17 +21,18 @@
  * Bootstrap file for setting the ABSPATH constant
  * and loading the config.php file. The config.php
  * file will then load the odm-init.php file, which
- * will then set up the DirectRM environment.
+ * will then set up the Avid Docuworks environment.
  *
  * If the config.php file is not found then an error
  * will be displayed asking the visitor to set up the
  * config.php file.
  *
- * Will also search for config.php in DirectRM' parent
- * directory to allow the DirectRM directory to remain
+ * Will also search for config.php in Avid Docuworks' parent
+ * directory to allow the Avid Docuworks directory to remain
  * untouched.
  *
  */
+
 
 if (file_exists('config.php')) {
     // In the case of root folder calls

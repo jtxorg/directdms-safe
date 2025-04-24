@@ -22,6 +22,12 @@ services:
       - src_volume:/var/www/html
       - file_store:/var/www/file_store
       - ./config/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
+    environment:
+      APP_DB_HOST: db
+      APP_DB_NAME: avid_docuworks
+      APP_DB_USER: avid
+      APP_DB_PASS: avidawesomepassword
+      #IS_DOCKER: "true"
     expose:
       - "9000"
     depends_on:
@@ -30,15 +36,15 @@ services:
   db:
     image: mysql:5.7
     restart: always
+    volumes:
+      - ./db_data:/var/lib/mysql
+      - ./db_init:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: awesomerootpassword
-      MYSQL_DATABASE: avid
+      MYSQL_DATABASE: avid_docuworks
       MYSQL_USER: avid
-      MYSQL_PASSWORD: avidawesomepassword
-    volumes:
-      - db_data:/var/lib/mysql
-      - ./db_init:/docker-entrypoint-initdb.d
-    command: --default-authentication-plugin=mysql_native_password
+      MYSQL_PASSWORD: 'avidawesomepassword'
+    command: '--default-authentication-plugin=mysql_native_password'
 
   certbot:
     image: certbot/certbot
@@ -46,7 +52,11 @@ services:
       - certbot-etc:/etc/letsencrypt
       - certbot-www:/var/www/certbot
       - ./certbot/scripts:/scripts
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot --quiet; sleep 12h & wait $!; done;'"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    entrypoint: /bin/sh
+    command: ["-c", "trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot --quiet; sleep 12h & wait $${!}; done;"]
 
 volumes:
   src_volume:
@@ -60,7 +70,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /mnt/volume_files_1
+      device: /mnt/storage
   db_data:
     driver: local
     driver_opts:

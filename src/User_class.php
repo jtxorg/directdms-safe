@@ -36,6 +36,7 @@ if (!defined('User_class')) {
         public $pw_reset_code;
         public $can_add;
         public $can_checkin;
+        public $twofa_enabled;
 
         /**
          * @param int $id
@@ -63,7 +64,8 @@ if (!defined('User_class')) {
                         first_name, 
                         pw_reset_code,
                         can_add,
-                        can_checkin
+                        can_checkin,
+                        2fa_enabled
                     FROM 
                         {$GLOBALS['CONFIG']['db_prefix']}user 
                     WHERE 
@@ -82,7 +84,8 @@ if (!defined('User_class')) {
                     $this->first_name,
                     $this->pw_reset_code,
                     $this->can_add,
-                    $this->can_checkin
+                    $this->can_checkin,
+                    $this->twofa_enabled
             ) = $result;
         }
 

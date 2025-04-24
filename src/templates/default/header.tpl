@@ -3,9 +3,7 @@
     <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <title>{$g_title|escape:'html'} - {$page_title|escape:'html'}</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-        {literal}
+{literal}
         <script type="text/javascript">
         <!--
         function popup(mylink, windowname)
@@ -33,9 +31,9 @@
 <!-- ----------------UID is {$uid} ----------------- -->
 <table width="100%" cellspacing="0" cellpadding="0">
     <tr>
-        <td align="left" style="text-align: center;">
+        <td align="left">
             <a href="{$g_base_url|escape:'html'}/out.php">
-                <img src="{$g_base_url|escape:'html'}/images/logo.png" title="{$site_title|escape:'html'}" alt="{$site_title|escape:'html'}" border="0">
+                <img src="{$g_base_url|escape:'html'}/images/logo.png" style="width:300px" title="{$site_title|escape:'html'}" alt="{$site_title|escape:'html'}" border="0">
             </a>
         </td>
         <td align="right" >

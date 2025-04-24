@@ -30,5 +30,3 @@
 <!--[if lt IE 9]>
     <script type="text/javascript" src="{$g_base_url}/templates/common/js/buttonfix.js"></script>
 <![endif]-->
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">

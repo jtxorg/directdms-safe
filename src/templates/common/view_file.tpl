@@ -10,7 +10,7 @@
             {$g_lang_message_if_you_are_unable_to_view2}
         </button>
     </div>
-    {$g_lang_message_if_you_are_unable_to_view1}
+    {$g_lang_message_if_you_are_unable_to_view1}<br />
     {$g_lang_message_if_you_are_unable_to_view2}
     {$g_lang_message_if_you_are_unable_to_view3}
 </form>

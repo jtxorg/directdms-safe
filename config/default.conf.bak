@@ -1,0 +1,10 @@
+server {
+    listen 80 default_server;
+    server_name avid.smart-moneygroup.com;
+
+    location ~ /.well-known/acme-challenge/ {
+        allow all;
+        root /var/www/certbot;
+    }
+
+}

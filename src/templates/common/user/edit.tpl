@@ -78,6 +78,12 @@
             </td>
         </tr>
         <tr>
+            <td>{$g_lang_label_2fa_enabled}?</td>
+            <td>
+                <input name="2fa_enabled" type="checkbox" value="1" {if $user->twofa_enabled eq '1'}checked="checked"{/if} {$mode|escape:'html'} id="cb_2fa_enabled" />
+            </td>
+        </tr>
+        <tr>
             <td align="center">
                 <input type="hidden" name="set_password" value="0">
 

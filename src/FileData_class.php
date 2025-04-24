@@ -59,7 +59,6 @@ if (!defined('FileData_class')) {
         public $write_users;
         public $admin_users;
         public $filesize;
-        public $isLocked;
         protected $connection;
 
         public function __construct($id, $connection)
@@ -419,6 +418,26 @@ if (!defined('FileData_class')) {
         }
 
         /**
+         * Get the type of the file by checking its extension
+         * @return string|false The MIME type of the file or false on failure
+         */
+        public function getType()
+        {
+            $realname = $this->getRealName();
+            if (empty($realname)) {
+                error_log('Error: filename not set');
+                return false;
+            }
+            
+            // Check if file ends with .pdf (case insensitive)
+            if (strtolower(substr($realname, -4)) === '.pdf') {
+                return 'application/pdf';
+            }
+            
+            return false;
+        }
+
+        /**
          * return the date that the file was created
          * @return string
          */
@@ -463,10 +482,10 @@ if (!defined('FileData_class')) {
                 rights
               FROM
                 {$GLOBALS['CONFIG']['db_prefix']}$this->TABLE_DEPT_PERMS
-			  WHERE
-			    fid = :fid
-	  		  AND
-	  		    dept_id = :dept_id
+              WHERE
+                fid = :fid
+              AND
+                dept_id = :dept_id
             ";
             $stmt = $this->connection->prepare($query);
             $stmt->execute(array(

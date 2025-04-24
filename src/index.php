@@ -50,6 +50,15 @@ if (!file_exists('config.php') && !file_exists('docker-configs/config.php')) {
 }
 
 require_once('odm-load.php');
+require_once('include/User_class.php');
+require_once('include/PHPMailer/PHPMailer.php');
+require_once('include/PHPMailer/SMTP.php');
+require_once('include/PHPMailer/Exception.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+use ODM\User;
 
 if (!isset($_REQUEST['last_message'])) {
     $_REQUEST['last_message'] = '';
@@ -123,7 +132,141 @@ if (isset($_POST['login'])) {
     if (count($result) == 1) {
         // register the user's ID
         $id = $result[0]['id'];
-
+        
+        // Check if 2FA is enabled
+        $query = "SELECT 2fa_enabled FROM {$GLOBALS['CONFIG']['db_prefix']}user WHERE id = :id";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute(array(':id' => $id));
+        $user = $stmt->fetch();
+        
+        if ($user['2fa_enabled']) {
+            // Generate 2FA token
+            $token = substr(str_shuffle('0123456789'), 0, 6);
+            $expires = date('Y-m-d H:i:s', strtotime('+5 minutes'));
+            
+            $query = "INSERT INTO {$GLOBALS['CONFIG']['db_prefix']}2fa_tokens (user_id, token, expires_at) 
+                     VALUES (:user_id, :token, :expires_at)";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute(array(
+                ':user_id' => $id,
+                ':token' => $token,
+                ':expires_at' => $expires
+            ));
+            
+            // Get user email
+            $query = "SELECT Email FROM {$GLOBALS['CONFIG']['db_prefix']}user WHERE id = :id";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute(array(':id' => $id));
+            $user = $stmt->fetch();
+            
+            // Get SMTP settings from database
+            $query = "SELECT name, value FROM {$GLOBALS['CONFIG']['db_prefix']}settings WHERE name IN ('smtp_host', 'smtp_port', 'smtp_user', 'smtp_password')";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+            $smtp_settings = array();
+            while ($row = $stmt->fetch()) {
+                $smtp_settings[$row['name']] = $row['value'];
+            }
+            
+            // Send email with token using SMTP settings
+            $mail_body = msg('email_2fa_token_intro') . PHP_EOL . PHP_EOL;
+            $mail_body .= msg('email_2fa_token') . ": " . $token . PHP_EOL . PHP_EOL;
+            $mail_body .= msg('email_2fa_token_expires') . ": 5 " . msg('email_2fa_token_minutes') . PHP_EOL . PHP_EOL;
+            $mail_body .= msg('email_2fa_token_warning') . PHP_EOL . PHP_EOL;
+            $mail_body .= msg('email_thank_you') . PHP_EOL;
+            
+            $email_sent = false;
+            if ($GLOBALS['CONFIG']['demo'] == 'False') {
+                try {
+                    // Create a new PHPMailer instance
+                    $mail = new PHPMailer(true);
+                    
+                    // Server settings
+                    $mail->isSMTP();
+                    $mail->Host = $smtp_settings['smtp_host'];
+                    $mail->SMTPAuth = true;
+                    $mail->Username = $smtp_settings['smtp_user'];
+                    $mail->Password = $smtp_settings['smtp_password'];
+                    
+                    // Try different ports and encryption methods
+                    $ports = array(587, 465, 25);
+                    $encryption = array(
+                        587 => PHPMailer::ENCRYPTION_STARTTLS,
+                        465 => PHPMailer::ENCRYPTION_SMTPS,
+                        25 => PHPMailer::ENCRYPTION_STARTTLS
+                    );
+                    
+                    $last_error = '';
+                    foreach ($ports as $port) {
+                        try {
+                            $mail->Port = $port;
+                            $mail->SMTPSecure = $encryption[$port];
+                            
+                            // Disable SSL verification for development
+                            $mail->SMTPOptions = array(
+                                'ssl' => array(
+                                    'verify_peer' => false,
+                                    'verify_peer_name' => false,
+                                    'allow_self_signed' => true
+                                )
+                            );
+                            
+                            // Set timeout
+                            $mail->Timeout = 10;
+                            $mail->SMTPKeepAlive = true;
+                            
+                            // Recipients
+                            $mail->setFrom($GLOBALS['CONFIG']['site_mail'], 'Avid Docuworks');
+                            $mail->addAddress($user['Email']);
+                            
+                            // Content
+                            $mail->isHTML(false);
+                            $mail->Subject = msg('email_2fa_token_subject');
+                            $mail->Body = $mail_body;
+                            
+                            // Set a timeout for the entire operation
+                            set_time_limit(30);
+                            
+                            $email_sent = $mail->send();
+                            if ($email_sent) {
+                                break; // Success, exit the loop
+                            }
+                        } catch (Exception $e) {
+                            $last_error = $e->getMessage();
+                            error_log("Failed to send 2FA email on port {$port}. Error: {$last_error}");
+                            continue; // Try next port
+                        }
+                    }
+                    
+                    if (!$email_sent) {
+                        throw new Exception("Failed to send email on all ports. Last error: {$last_error}");
+                    }
+                } catch (Exception $e) {
+                    error_log("Failed to send 2FA email to " . $user['Email'] . ". SMTP Error: " . $mail->ErrorInfo . 
+                             ". Using SMTP settings - Host: " . $smtp_settings['smtp_host'] . 
+                             ", Port: " . $smtp_settings['smtp_port'] . 
+                             ". Server IP: " . $_SERVER['SERVER_ADDR']);
+                    // Store the error message in session for display
+                    $_SESSION['2fa_email_error'] = msg('message_2fa_email_failed') . 
+                        " (SMTP Error: " . $mail->ErrorInfo . 
+                        ". Using SMTP settings - Host: " . $smtp_settings['smtp_host'] . 
+                        ", Port: " . $smtp_settings['smtp_port'] . ")";
+                }
+            }
+            
+            // Store temporary session data
+            $_SESSION['temp_uid'] = $id;
+            $_SESSION['2fa_token'] = $token;
+            
+            // Redirect to 2FA verification page regardless of email status
+            if (isset($_REQUEST['redirection'])) {
+                header('Location: verify_2fa.php?redirection=' . urlencode($_REQUEST['redirection']));
+            } else {
+                header('Location: verify_2fa.php');
+            }
+            exit;
+        }
+        
         // initiate a session
         $_SESSION['uid'] = $id;
 

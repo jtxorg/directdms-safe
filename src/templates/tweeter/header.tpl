@@ -8,9 +8,9 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
+
     <link href="{$g_base_url}/templates/tweeter/css/bootstrap.css" rel="stylesheet">
     <link href="{$g_base_url}/templates/tweeter/css/tweeter.css" rel="stylesheet">
-
     <style type="text/css">
         {literal}
       body {
@@ -51,8 +51,9 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="{$g_base_url|escape:'html'}/out.php">{$g_title|escape:'html'}</a>
-          <div>
+          <div class="nav-collapse collapse">
             <ul class="nav">
+
               <li class="active"><a href="{$g_base_url|escape:'html'}/out.php">{$g_lang_home}</a></li>
               {if $can_checkin || $isadmin eq 'yes'}
                 <li><a href="{$g_base_url}/in.php">{$g_lang_button_check_in}</a></li>

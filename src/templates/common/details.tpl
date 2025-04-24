@@ -38,7 +38,7 @@
         <th valign=top align=right>{$g_lang_label_description}:</th><td> {$file_detail.description|escape:'html'}</td>
     </tr>
     <tr>
-	<th valign=top align=right>{$g_lang_label_comment}:</th><td> {$file_detail.comment|escape:'html'}</td>
+    <th valign=top align=right>{$g_lang_label_comment}:</th><td> {$file_detail.comment|escape:'html'}</td>
     </tr>
     <tr>
         <th valign=top align=right>{$g_lang_revision}:</th><td> <div id="details_revision">{$file_detail.revision|escape:'html'}</div></td>
@@ -67,6 +67,13 @@
                     <td align="center">
                         <div class="buttons">
                             <a href="{$view_link|escape}" class="positive"><img src="images/view.png" alt="view"/>{$g_lang_detailspage_view}</a>
+                        </div>
+                    </td>
+                {/if}
+                {if $sign_link ne ''}
+                    <td align="center">
+                        <div class="buttons">
+                            <a href="{$sign_link|escape}" class="regular">Send & Sign</a>
                         </div>
                     </td>
                 {/if}
@@ -103,28 +110,28 @@
 </table>
 {literal}
 <script type="text/javascript">
-	var message_window;
-	var mesg_window_frm;
-	function my_delete()
-	{
-		if(window.confirm("{/literal}{$g_lang_detailspage_are_sure}{literal}")) {	
-		window.location = "{/literal}{$my_delete_link}{literal}";
-		}
-	}
-	function sendFields()
-	{
-		mesg_window_frm = message_window.document.author_note_form;
-		if(mesg_window_frm) {
+    var message_window;
+    var mesg_window_frm;
+    function my_delete()
+    {
+        if(window.confirm("{/literal}{$g_lang_detailspage_are_sure}{literal}")) {   
+        window.location = "{/literal}{$my_delete_link}{literal}";
+        }
+    }
+    function sendFields()
+    {
+        mesg_window_frm = message_window.document.author_note_form;
+        if(mesg_window_frm) {
                     mesg_window_frm.to.value = document.data.to.value;
                     mesg_window_frm.subject.value = document.data.subject.value;
                     mesg_window_frm.comments.value = document.data.comments.value;
                 }
-	}
-	function showMessage()
-	{
-		message_window = window.open('{/literal}{$comments_link|escape}{literal}' , 'comment_wins', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,width=450,height=200');
-		message_window.focus();
-		setTimeout("sendFields();", 500);
-	}
+    }
+    function showMessage()
+    {
+        message_window = window.open('{/literal}{$comments_link|escape}{literal}' , 'comment_wins', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,width=450,height=200');
+        message_window.focus();
+        setTimeout("sendFields();", 500);
+    }
 </script>
 {/literal}

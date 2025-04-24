@@ -221,6 +221,12 @@ if ($status > 0) {
 if ($user_permission_obj->getAuthority($request_id, $file_data_obj) >= $user_permission_obj->READ_RIGHT) {
     $view_link = 'view_file.php?id=' . e::h($full_requestId) . '&state=' . ($state + 1);
     $GLOBALS['smarty']->assign('view_link', $view_link);
+    
+    // Add Send & Sign button for PDF files
+    if ($file_data_obj->getType() === 'application/pdf') {
+        $sign_link = 'sign.php?id=' . e::h($full_requestId) . '&state=' . ($state + 1);
+        $GLOBALS['smarty']->assign('sign_link', $sign_link);
+    }
 }
 
 // Lets figure out which buttons to show

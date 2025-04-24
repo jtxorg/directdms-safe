@@ -285,7 +285,7 @@ $lang['message_for_further_assistance'] = 'for further assistance';
 $lang['message_found_documents'] = 'found document(s)';
 $lang['message_if_you_are_unable_to_view1'] = 'If you are not able to do so for some reason, click ';
 $lang['message_if_you_are_unable_to_view2'] = 'Download';
-$lang['message_if_you_are_unable_to_view3'] = '<br> to begin downloading it to your local workstation for local view.';
+$lang['message_if_you_are_unable_to_view3'] = 'to begin downloading it to your local workstation for local view.';
 $lang['message_initial_import'] = 'Initial Import';
 $lang['message_last_message'] = 'Last Message';
 $lang['message_latest_version'] = 'Latest version';
@@ -341,6 +341,8 @@ $lang['message_you_did_not_enter_value'] = 'You did not enter a value!';
 $lang['message_you_do_not_have_an_account'] = 'You do not currently have an account. Please contact the administrator to request one.';
 $lang['message_you_must_assign_rights'] = 'You must assign view/modify rights to at least one user.';
 $lang['message_your_password_has_been_changed'] = 'Your password has been changed.';
+$lang['message_2fa_email_failed'] = 'Failed to send 2FA email. You may continue without 2FA verification.';
+$lang['label_continue_without_2fa'] = 'Continue Without 2FA';
 
 $lang['view'] = $lang['label_view'];
 
@@ -460,6 +462,19 @@ $lang['userpage_user_delete'] = 'Choose User to Delete';
 $lang['userpage_user_info'] = 'User information';
 $lang['userpage_username'] = 'Username';
 $lang['userpage_yes'] = 'Yes';
+
+// 2FA related strings
+$lang['label_2fa_verification'] = 'Two-Factor Authentication';
+$lang['label_2fa_token'] = 'Verification Code';
+$lang['label_2fa_enabled'] = 'Enable Two-Factor Authentication';
+$lang['label_verify'] = 'Verify';
+$lang['message_invalid_2fa_token'] = 'Invalid verification code. Please try again.';
+$lang['email_2fa_token_subject'] = 'Your Two-Factor Authentication Code';
+$lang['email_2fa_token_intro'] = 'You have requested to log in with two-factor authentication.';
+$lang['email_2fa_token'] = 'Your verification code is';
+$lang['email_2fa_token_expires'] = 'This code will expire in';
+$lang['email_2fa_token_minutes'] = 'minutes';
+$lang['email_2fa_token_warning'] = 'If you did not request this code, please ignore this email.';
 
 // Admin Page
 $lang['adminpage_about_section_title'] = 'About';

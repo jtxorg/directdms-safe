@@ -29,7 +29,7 @@ if (false) {
         <title>Error: PHP is not running</title>
     </head>
     <body>
-    <h1 id="logo" style="text-align: center;"><img alt="DirectRM" src="../images/logo.png"/></h1>
+    <h1 id="logo"><img alt="Avid Docuworks" src="../images/logo.png"/></h1>
 
     <h2>Error: PHP is not running</h2>
 
@@ -85,13 +85,13 @@ $_SESSION['db_prefix'] = !empty($_SESSION['db_prefix']) ? $_SESSION['db_prefix']
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-    <title>DirectRM Installer</title>
+    <title>Avid Docuworks Installer</title>
     <link rel="stylesheet" href="../templates/common/css/install.css" type="text/css"/>
 </head>
 
 <body>
 <div id="content">
-    <img src="../images/logo.png" style="text-align: center;"><br>
+    <img src="../images/logo.png" style="width:200px;" alt="Avid Docuworks"><br>
     <?php
 
     if (!isset($_REQUEST['op'])) {
@@ -460,7 +460,7 @@ $_SESSION['db_prefix'] = !empty($_SESSION['db_prefix']) ? $_SESSION['db_prefix']
         $is_upgrade = ($db_version != REQUIRED_DB_VERSION);
 
         ?>
-    <h3>Welcome to the DirectRM Database Installer/Updater Tool</h3>
+    <h3>Welcome to the Avid Docuworks Database Installer/Updater Tool</h3>
 </div>
 <hr>
 <table>
@@ -489,7 +489,7 @@ $_SESSION['db_prefix'] = !empty($_SESSION['db_prefix']) ? $_SESSION['db_prefix']
         <td>
             <a href="index.php?op=install" class="button" onclick="return confirm('Are you sure? This will modify the database you have configured in config.php. Only use this option for a FRESH INSTALL.')">
                 Click HERE To set up database for v<?php echo $GLOBALS['CONFIG']['current_version'];
-    ?> release of DirectRM </a><br /><br />
+    ?> release of Avid Docuworks </a><br /><br />
         </td>
         <?php
 

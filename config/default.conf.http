@@ -1,0 +1,53 @@
+# ./config/default.conf (HTTP-ONLY Version - for initial Certbot setup)
+
+server {
+    listen 80 default_server;
+    # listen [::]:80 default_server; # Optional IPv6 listener
+    server_name docuworks.avidian.com;
+
+    # --- Document Root and Index ---
+    # This points to where your PHP application code is mounted
+    root /var/www/html;
+    index index.php index.html index.htm; # Prioritize index.php
+
+    # --- Location Block for Let's Encrypt Challenges ---
+    # IMPORTANT: This allows Certbot's webroot plugin to work
+    # Make sure Nginx can read from /var/www/certbot
+    location ~ /\.well-known/acme-challenge/ {
+        allow all;
+        root /var/www/certbot; # Path Certbot uses for webroot challenges
+    }
+
+    # --- General Location Block ---
+    # Handles requests - tries direct file, then directory, then passes to index.php (front controller pattern)
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    # --- PHP-FPM Processing ---
+    # Pass PHP scripts to the PHP-FPM container service named 'php' on port 9000
+    location ~ \.php$ {
+        try_files $uri =404; # Return 404 if the PHP file doesn't actually exist
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+
+        # Address of the PHP-FPM service (name from docker-compose.yml)
+        fastcgi_pass php:9000;
+
+        fastcgi_index index.php;
+        include fastcgi_params; # Include standard FastCGI parameters
+
+        # Set the SCRIPT_FILENAME FastCGI parameter (crucial for PHP)
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+    }
+
+    # --- Security Enhancements ---
+    # Deny access to hidden files (like .htaccess, .htpasswd)
+    location ~ /\.ht {
+        deny all;
+    }
+
+    # Access logs (optional)
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+}

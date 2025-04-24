@@ -62,10 +62,33 @@ if (isset($_REQUEST['submit']) && $_REQUEST['submit']=='update') {
         $_POST['last_message'] = $GLOBALS['lang']['message_datadir_problem_writable'];
     } elseif ((!is_numeric($_POST['max_filesize'])) || (!is_numeric($_POST['revision_expiration']) || (!is_numeric($_POST['max_query'])))) {
         $_POST['last_message'] = $GLOBALS['lang']['message_config_value_problem'];
-    } elseif ($settings->save($_POST)) {
-        $_POST['last_message'] = $GLOBALS['lang']['message_all_actions_successfull'];
     } else {
-        $_POST['last_message'] = $GLOBALS['lang']['message_error_performing_action'];
+        // Handle SMTP settings
+        if (isset($_POST['smtp_host'])) {
+            $_POST['smtp_host'] = trim($_POST['smtp_host']);
+        }
+        if (isset($_POST['smtp_port'])) {
+            $_POST['smtp_port'] = trim($_POST['smtp_port']);
+        }
+        if (isset($_POST['smtp_user'])) {
+            $_POST['smtp_user'] = trim($_POST['smtp_user']);
+        }
+        if (isset($_POST['smtp_password'])) {
+            $_POST['smtp_password'] = trim($_POST['smtp_password']);
+        }
+        
+        try {
+            if ($settings->save($_POST)) {
+                $_POST['last_message'] = $GLOBALS['lang']['message_all_actions_successfull'];
+                // Reload settings after save
+                $settings->load();
+            } else {
+                $_POST['last_message'] = $GLOBALS['lang']['message_error_performing_action'];
+            }
+        } catch (Exception $e) {
+            error_log("Error saving settings: " . $e->getMessage());
+            $_POST['last_message'] = $GLOBALS['lang']['message_error_performing_action'];
+        }
     }
 
     if (!isset($_POST['last_message'])) {

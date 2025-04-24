@@ -1,8 +1,8 @@
-# Test Suite for DirectRM
+# Test Suite for Avid Docuworks
 
 ## Katalon Testing
 
-DirectRM can be tested using the Katalon Recorder or other compatible apps.
+Avid Docuworks can be tested using the Katalon Recorder or other compatible apps.
 
 ### How-To Test
 
@@ -10,7 +10,7 @@ DirectRM can be tested using the Katalon Recorder or other compatible apps.
 * Copy the resources/test.txt file to /var/www/test.txt  on your mac or linux computer 
 * Start a local docker-compose deployment:
   `docker-compose up -d --build`
-* Load a test suite and choose a suite from the /tests folder in the DirectRM codebase
+* Load a test suite and choose a suite from the /tests folder in the codebase
 * Play the test suite in Katalon
 * To clean up for another thest run this:
-` docker-compose stop; docker-compose rm -f; docker volume rm DirectRM_odm-db-data DirectRM_odm-files-data DirectRM_odm-docker-configs; docker-compose up -d --build`
+` docker-compose stop; docker-compose rm -f; docker volume rm odm-db-data odm-files-data odm-docker-configs; docker-compose up -d --build`

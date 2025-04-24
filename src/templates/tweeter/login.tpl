@@ -42,7 +42,7 @@
 
         <table cellspacing="0" cellpadding="0">
         <tr>
-        <td style="text-align: center;"><img src="images/logo.png" alt="Site Logo" border=0></td>
+        <td align="left"><img src="images/logo.png" style="width:300px;" alt="Avid Docuworks" border=0></td>
         </tr>
         </table>
 

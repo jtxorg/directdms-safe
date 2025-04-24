@@ -30,7 +30,10 @@ $plugin = new Plugin();
 // Set the Smarty variables
 require_once('includes/smarty/Smarty.class.php');
 $GLOBALS['smarty'] = new Smarty();
-$GLOBALS['smarty']->template_dir = dirname(__FILE__) . '/templates/' . $GLOBALS['CONFIG']['theme'] . '/';
+$GLOBALS['smarty']->template_dir = array(
+    dirname(__FILE__) . '/templates/' . $GLOBALS['CONFIG']['theme'] . '/',
+    dirname(__FILE__) . '/templates/common/'
+);
 $GLOBALS['smarty']->compile_dir = dirname(__FILE__) . '/templates_c/';
 
 $GLOBALS['CONFIG']['base_url'] = base_url();
@@ -41,7 +44,18 @@ foreach ($GLOBALS['CONFIG'] as $key => $value) {
 }
 
 include_once __DIR__ .'/vendor/owasp/csrf-protector-php/libs/csrf/csrfprotector.php';
-csrfProtector::init();
+
+// Check if current page is in the excluded list before initializing CSRF Protector
+$current_script = basename($_SERVER['SCRIPT_NAME']);
+$excluded_pages = array(
+    'sign_document_external.php',
+    'view_signature_file.php'
+);
+
+if (!in_array($current_script, $excluded_pages)) {
+    // Only initialize CSRF protection for non-excluded pages
+    csrfProtector::init();
+}
 
 include_once('classHeaders.php');
 include_once('mimetypes.php');

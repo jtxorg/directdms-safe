@@ -49,21 +49,42 @@ if (!defined('Settings_class')) {
         */
         public function save($data)
         {
-            foreach ($data as $key=>$value) {
-                $query = "
-                  UPDATE
-                    {$GLOBALS['CONFIG']['db_prefix']}settings
-                  SET VALUE = :value
-                  WHERE
-                    name = :key
-                ";
-                $stmt = $this->connection->prepare($query);
-                $stmt->execute(array(
-                    ':value' => $value,
-                    ':key' => $key
-                ));
+            try {
+                error_log("Starting settings save with data: " . print_r($data, true));
+                foreach ($data as $key=>$value) {
+                    // Skip non-setting fields
+                    if (in_array($key, array('submit', 'last_message'))) {
+                        error_log("Skipping non-setting field: $key");
+                        continue;
+                    }
+
+                    $query = "
+                      UPDATE
+                        {$GLOBALS['CONFIG']['db_prefix']}settings
+                      SET value = :value
+                      WHERE
+                        name = :key
+                    ";
+                    error_log("Executing query for $key: $query with value: $value");
+                    $stmt = $this->connection->prepare($query);
+                    $result = $stmt->execute(array(
+                        ':value' => $value,
+                        ':key' => $key
+                    ));
+                    
+                    if (!$result) {
+                        error_log("Failed to update setting: $key");
+                        error_log("PDO Error Info: " . print_r($stmt->errorInfo(), true));
+                        return false;
+                    }
+                    error_log("Successfully updated setting: $key");
+                }
+                return true;
+            } catch (PDOException $e) {
+                error_log("Error saving settings: " . $e->getMessage());
+                error_log("PDO Error Info: " . print_r($e->errorInfo, true));
+                return false;
             }
-            return true;
         }
         /**
         * Load settings to an array

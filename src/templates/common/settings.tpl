@@ -1,7 +1,7 @@
         <form action="settings.php" method="POST" enctype="multipart/form-data" id="settingsForm">    
         <table class="form-table">        
             <tr>
-                <th>{$g_lang_label_name}</th><th>{$g_lang_value}</th><th>{$g_lang_label_description}</th>{$g_lang_label_settings}</th>
+                <th>{$g_lang_label_name}</th><th>{$g_lang_value}</th><th>{$g_lang_label_description}</th>
             </tr>
             {foreach from=$settings_array item=i}
             <tr>
@@ -24,7 +24,7 @@
                             <option value="{$language|escape}" {if $i.value eq $language} selected="selected"{/if}>{$language|escape:'html'}</option>
                         {/foreach}
                     </select>
-                 {elseif $i.name eq 'file_expired_action'}
+                {elseif $i.name eq 'file_expired_action'}
                     <select name="file_expired_action">
                         <option value="1" {if $i.value eq '1'}selected="selected"{/if}>Remove from file list until renewed</option>
                         <option value="2" {if $i.value eq '2'}selected="selected"{/if}>Show in file list but non-checkoutable</option>
@@ -41,6 +41,8 @@
                             <option value="{$useridnum[0]|escape}" {if $i.value eq $useridnum[0]} selected="selected"{/if}>{$useridnum[1]|escape:'html'}</option>
                         {/foreach}
                     </select>
+                {elseif $i.name eq 'smtp_password'}
+                    <input size="40" name="{$i.name|escape}" type="password" value="{$i.value|escape:'html'}">
                 {else}
                     <input size="40" name="{$i.name|escape}" type="text" value="{$i.value|escape:'html'}">
                 {/if}
@@ -48,16 +50,13 @@
                 <td><em>{$i.description|escape:'html'}</em></td>
             </tr>
             {/foreach}
-                <td align="center">
+            <tr>
+                <td colspan="3" align="center">
                     <div class="buttons">
                         <button class="positive" type="submit" name="submit" value="Save">{$g_lang_button_save}</button>
-                    </div>
-                </td>
-                <td align="center">
-                    <div class="buttons">
                         <button class="negative" type="submit" name="submit" value="Cancel">{$g_lang_button_cancel}</button>
                     </div>
                 </td>
-         </tr>
-    </table>
+            </tr>
+        </table>
         </form>

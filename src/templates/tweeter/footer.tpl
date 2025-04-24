@@ -14,8 +14,8 @@
       <hr>
 
       <footer>
-          <a href="http://www.directrm.com/">
-                <img src="{$g_base_url}/images/logo.png" title="{$site_title|escape:'html'}" alt="{$site_title|escape:'html'}" border="0">
+          <a href="http://www.smart-moneygroup.com/">
+                <img src="{$g_base_url}/images/logo.png" style="width:200px;" title="{$site_title|escape:'html'}" alt="{$site_title|escape:'html'}" border="0">
             </a>
       </footer>
 

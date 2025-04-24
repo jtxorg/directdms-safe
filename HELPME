@@ -1,0 +1,48 @@
+docker-compose run --rm certbot certonly --webroot -w /var/www/certbot \
+    --email jtx@smart-moneygroup.com --agree-tos --no-eff-email \
+    --config-dir /etc/letsencrypt \
+    -d avid.smart-moneygroup.com \
+    --staging -vvv
+
+
+
+docker-compose run --rm certbot certonly --webroot -w /var/www/certbot \
+    --email jtx@smart-moneygroup.com --agree-tos --no-eff-email \
+    --config-dir /etc/letsencrypt \
+    -d docuworks.avidian.com \
+    --staging -vvv
+
+
+
+docker-compose run --rm --entrypoint "" certbot \
+  certonly --webroot -w /var/www/certbot \
+  --email jtx@smart-moneygroup.com --agree-tos --no-eff-email \
+  --config-dir /etc/letsencrypt \
+  -d docuworks.avidian.com \
+  --staging -vvv
+
+
+docker-compose run --rm --entrypoint "" certbot \
+  certbot certonly --webroot -w /var/www/certbot \
+  --email jtx@smart-moneygroup.com --agree-tos --no-eff-email \
+  --config-dir /etc/letsencrypt \
+  -d docuworks.avidian.com \
+  --staging -vvv
+
+
+docker-compose run --rm certbot \
+  certbot certonly --webroot -w /var/www/certbot \
+  --email jtx@smart-moneygroup.com --agree-tos --no-eff-email \
+  --config-dir /etc/letsencrypt \
+  -d docuworks.avidian.com -vvv
+
+
+docker-compose run --rm certbot \
+  -c 'certbot certonly --webroot -w /var/www/certbot --email jtx@smart-moneygroup.com --agree-tos --no-eff-email --config-dir /etc/letsencrypt -d docuworks.avidian.com -vvv'
+
+
+INSERT INTO odm_user
+  (id, username, password, first_name, last_name, Email, department, can_add, can_checkin)
+VALUES
+  (1, 'admin', MD5('password for friends!'), 'Admin', 'User', 'jtx@smart-moneygroup.com', 1, 1, 1);
+

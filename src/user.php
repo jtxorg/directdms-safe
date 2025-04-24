@@ -427,6 +427,11 @@ if (isset($_REQUEST['submit']) and $_REQUEST['submit'] == 'adduser') {
     if (isset($_POST['first_name'])) {
         $query .= " first_name = :first_name ";
     }
+    if (isset($_POST['2fa_enabled'])) {
+        $query .= ", 2fa_enabled = :2fa_enabled ";
+    } else {
+        $query .= ", 2fa_enabled = '0' ";
+    }
     $query .= " WHERE id = :id ";
 
     $stmt = $pdo->prepare($query);
@@ -452,6 +457,9 @@ if (isset($_REQUEST['submit']) and $_REQUEST['submit'] == 'adduser') {
     }
     if (isset($_POST['first_name'])) {
         $stmt->bindParam(':first_name', $_POST['first_name']);
+    }
+    if (isset($_POST['2fa_enabled'])) {
+        $stmt->bindParam(':2fa_enabled', $_POST['2fa_enabled']);
     }
     $stmt->bindParam(':id', $_POST['id']);
     $stmt->execute();

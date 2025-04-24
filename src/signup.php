@@ -20,9 +20,18 @@
 // (C) 2002-2007 Stephen Lawrence Jr., Jon Miner
 // Adds files to the repository
 
+require_once('odm-load.php');
+require_once('AccessLog_class.php');
+require_once('Email_class.php');
+require_once('include/PHPMailer/PHPMailer.php');
+require_once('include/PHPMailer/SMTP.php');
+require_once('include/PHPMailer/Exception.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 use Aura\Html\Escaper as e;
 
-include('odm-load.php');
 if ($GLOBALS['CONFIG']['allow_signup'] == 'True') {
 
     // Submitted so insert data now
@@ -84,30 +93,85 @@ if ($GLOBALS['CONFIG']['allow_signup'] == 'True') {
 
             // mail user telling him/her that his/her account has been created.
             echo msg ('message_account_created') . ' ' . $_POST['username'].'<br />';
-            if($GLOBALS['CONFIG']['authen'] == 'mysql')
-            {
+            if($GLOBALS['CONFIG']['authen'] == 'mysql') {
+                //lol noone was sending email!
+		// CUT THIS ALL OUT AND PUT IT IN A CLASS!
+                $query = "SELECT name, value FROM {$GLOBALS['CONFIG']['db_prefix']}settings WHERE name IN ('smtp_host', 'smtp_port', 'smtp_user', 'smtp_password')";
+                $smtp_stmt = $pdo->prepare($query);
+                $smtp_stmt->execute();
+                $smtp_settings = array();
+                while ($row = $smtp_stmt->fetch()) {
+                    $smtp_settings[$row['name']] = $row['value'];
+                }
+
+
+                // Log SMTP settings (without password)
+                error_log("SMTP Settings - Host: " . ($smtp_settings['smtp_host'] ?? 'not set') . 
+                          ", Port: " . ($smtp_settings['smtp_port'] ?? 'not set') . 
+                          ", Username: " . ($smtp_settings['smtp_user'] ?? 'not set'));
+                    
+                // Check if we have all required SMTP settings
+                if (empty($smtp_settings['smtp_host']) || empty($smtp_settings['smtp_user'])) {
+                    error_log("Missing SMTP settings for email notification");
+                    // Continue without sending email
+                } else {
+                    $mail = new PHPMailer(true);
+                    $mail->isSMTP();
+                    $mail->Host = $smtp_settings['smtp_host'];
+                    $mail->SMTPAuth = true;
+                    $mail->Username = $smtp_settings['smtp_user'];
+                    $mail->Password = $smtp_settings['smtp_password'];
+
+                    $email_sent = false;
+                    $last_error = '';
+
+                        try {
+                            $mail->Port = 2525;
+
+                            $mail->SMTPSecure = 2525;
+                            // Disable SSL verification for development
+                            $mail->SMTPOptions = array(
+                                'ssl' => array(
+                                    'verify_peer' => false,
+                                    'verify_peer_name' => false,
+                                    'allow_self_signed' => true
+                                )
+                            );
+                            // Clear recipients before retrying
+                            $mail->clearAddresses();
+                            $mail->setFrom($GLOBALS['CONFIG']['site_mail'], 'Avid Docuworks');
+                            $mail->addAddress($_POST['Email']);
+                            $mail->isHTML(true);
+                            $mail->Subject = "Your account has been created!";
+                            $mail->Body = msg('message_account_created_password') . ': '. e::h($_REQUEST['password']) . PHP_EOL . PHP_EOL;
+			    $mail->Body .= '<br><a href="' . $GLOBALS['CONFIG']['base_url'] . '">' . msg('login'). '</a>';
+
+                            if ($mail->send()) {
+                                $email_sent = true;
+                                error_log("Notification email sent successfully on port 2525"); //{$port}");
+                            }
+                        } catch (Exception $e) {
+                            $last_error = $e->getMessage();
+                            error_log("Failed to send notification email on port 2525 Error: {$last_error}");
+                        }
+		}
+
                 echo msg('message_account_created_password') . ': '. e::h($_REQUEST['password']) . PHP_EOL . PHP_EOL;
                 echo '<br><a href="' . $GLOBALS['CONFIG']['base_url'] . '">' . msg('login'). '</a>';
                 exit;
             }
         }
     }
-    ?>
+?>
         <html>
-        <head><title>Sign Up</title>
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        </head>
+        <head><title>Sign Up</title></head>
         <body>
 <?php
     if (is_readable("signup_header.html")) {
         include("signup_header.html");
     }
     ?>
-
-    <div style="text-align: center;">
-        <img src="images/logo.png" alt="DirectRM" border=0 />
-    </div>
-
+                
             <font size=6>Sign Up</font>
         <br><script type="text/javascript" src="FormCheck.js"></script>
 

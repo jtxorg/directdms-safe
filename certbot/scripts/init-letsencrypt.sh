@@ -1,9 +1,9 @@
 #!/bin/sh
 
-domain="vault.e-lockbox.com"
+domain="docuworks.avidian.com"
 rsa_key_size=4096
 data_path="/etc/letsencrypt"
-email="jbaggio@rsttechnology.com"
+email="jtx@smart-moneygroup.com"
 staging=0
 
 if [ -d "$data_path/live/$domain" ]; then

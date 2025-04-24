@@ -199,6 +199,30 @@ $query = "CREATE TABLE {$dbprefix}rights (
 $stmt = $pdo->prepare($query);
 $stmt->execute();
 
+// Signature Requests table
+$query = "DROP TABLE IF EXISTS {$dbprefix}signature_requests";
+$stmt = $pdo->prepare($query);
+$stmt->execute();
+
+$query = "CREATE TABLE {$dbprefix}signature_requests (
+  id int(11) unsigned NOT NULL auto_increment,
+  file_id int(11) unsigned NOT NULL,
+  requester_id int(11) unsigned NOT NULL,
+  recipient_email varchar(255) NOT NULL,
+  request_key varchar(32) NOT NULL,
+  status enum('pending','completed','expired') NOT NULL default 'pending',
+  created_at datetime NOT NULL default CURRENT_TIMESTAMP,
+  completed_at datetime default NULL,
+  notify_on_complete tinyint(1) NOT NULL default 0,
+  PRIMARY KEY (id),
+  UNIQUE KEY request_key (request_key),
+  KEY file_id (file_id),
+  KEY requester_id (requester_id),
+  KEY status (status)
+) ENGINE = MYISAM";
+$stmt = $pdo->prepare($query);
+$stmt->execute();
+
 // Rights values
 $query = "INSERT INTO {$dbprefix}rights VALUES (0,'none')";
 $stmt = $pdo->prepare($query);
@@ -334,7 +358,11 @@ $sql_operations = array(
 "INSERT INTO `{$dbprefix}settings` VALUES(NULL, 'try_nis', 'False', 'Attempt NIS password lookups from YP server?', 'bool');",
 "INSERT INTO `{$dbprefix}settings` VALUES(NULL, 'theme', 'tweeter', 'Which theme to use?', '');",
 "INSERT INTO `{$dbprefix}settings` VALUES(NULL, 'language', 'english', 'Set the default language (english, spanish, turkish, etc.). Local users may override this setting. Check include/language folder for languages available', 'alpha|req');",
-"INSERT INTO `{$dbprefix}settings` VALUES(NULL, 'max_query', '500', 'Set this to the maximum number of rows you want to be returned in a file listing. If your file list is slow decrease this value.', 'num');"
+"INSERT INTO `{$dbprefix}settings` VALUES(NULL, 'max_query', '500', 'Set this to the maximum number of rows you want to be returned in a file listing. If your file list is slow decrease this value.', 'num');",
+"INSERT INTO `{$dbprefix}settings` VALUES(NULL, 'smtp_host', '', 'SMTP server hostname for sending emails', 'maxsize=255');",
+"INSERT INTO `{$dbprefix}settings` VALUES(NULL, 'smtp_port', '587', 'SMTP server port (default: 587 for TLS)', 'num');",
+"INSERT INTO `{$dbprefix}settings` VALUES(NULL, 'smtp_user', '', 'SMTP server username', 'maxsize=255');",
+"INSERT INTO `{$dbprefix}settings` VALUES(NULL, 'smtp_password', '', 'SMTP server password', 'maxsize=255');"
 );
 
 foreach ($sql_operations as $query) {
