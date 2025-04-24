@@ -1,3 +1,6 @@
 .idea
 src/odm_data
 src/config.php
+db_data
+db_init
+certbot
