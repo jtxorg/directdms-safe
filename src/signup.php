@@ -183,7 +183,7 @@ if ($GLOBALS['CONFIG']['allow_signup'] == 'True') {
         <tr><td><b><?php echo msg('label_first_name');
     ?></b></td><td><input name="first_name" type="text"></td></tr>
         <tr><td><b><?php echo msg('username');
-    ?></b></td><td><input name="username" type="text"></td></tr>
+    ?></b></td><td><input name="username" type="text"> <small>(Note - Username must NOT be an email address)</small></td></tr>
         <tr>
         <td><b>Phone Number</b></td>
         <td>
@@ -236,8 +236,8 @@ if ($GLOBALS['CONFIG']['allow_signup'] == 'True') {
         </select>
         </td>
         <tr>
-        <td></td>
-        <td columnspan=3 align="center"><input type="Submit" name="adduser" onClick="return validatemod(add_user);" value="<?php echo msg('submit');
+        
+        <td colspan="2" align="center"><input type="Submit" name="adduser" onClick="return validatemod(add_user);" value="<?php echo msg('submit');
     ?>">
         </form>
         </td>

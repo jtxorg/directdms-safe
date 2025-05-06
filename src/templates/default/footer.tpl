@@ -16,7 +16,7 @@
 {/if}
 <hr>
     <a href="mailto:{$g_site_mail|escape:'html'}">{$g_title|escape:'html'}</a><p />
-    <a href="http://www.avidian.com/" target="_new">Avidian</a><br />
+    <a href="https://tmperp.smart-moneygroup.com/" target="_new">Avid ERP</a><br />
 </body>
 </html>
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2025-04-23 23:54:47
+<?php /* Smarty version 2.6.28, created on 2025-05-06 18:37:06
          compiled from footer.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'footer.tpl', 18, false),)), $this); ?>
@@ -22,6 +22,6 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'f
     <a href="mailto:<?php echo ((is_array($_tmp=$this->_tpl_vars['g_site_mail'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')); ?>
 "><?php echo ((is_array($_tmp=$this->_tpl_vars['g_title'])) ? $this->_run_mod_handler('escape', true, $_tmp, 'html') : smarty_modifier_escape($_tmp, 'html')); ?>
 </a><p />
-    <a href="http://www.avidian.com/" target="_new">Avidian</a><br />
+    <a href="https://tmperp.smart-moneygroup.com/" target="_new">Avid ERP</a><br />
 </body>
 </html>

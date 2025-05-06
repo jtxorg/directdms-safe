@@ -20,9 +20,19 @@
 // Copyright (C) 2005-2006 Glowball Solutions
 // Utility to reset a user password
 
-use Aura\Html\Escaper as e;
+
 
 include_once('odm-load.php');
+require_once('Email_class.php');
+require_once('include/PHPMailer/PHPMailer.php');
+require_once('include/PHPMailer/SMTP.php');
+require_once('include/PHPMailer/Exception.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+use Aura\Html\Escaper as e;
+
 
 if (isset($GLOBALS['CONFIG']['allow_password_reset']) && $GLOBALS['CONFIG']['allow_password_reset'] != 'True') {
     echo msg('message_sorry_not_allowed');
@@ -228,9 +238,64 @@ if (
         
         // send the email
         if ($GLOBALS['CONFIG']['demo'] == 'False') {
-            mail($email, msg('area_reset_password'), $mail_body, $mail_headers);
-        }
+                $query = "SELECT name, value FROM {$GLOBALS['CONFIG']['db_prefix']}settings WHERE name IN ('smtp_host', 'smtp_port', 'smtp_user', 'smtp_password')";
+                $smtp_stmt = $pdo->prepare($query);
+                $smtp_stmt->execute();
+                $smtp_settings = array();
+                while ($row = $smtp_stmt->fetch()) {
+                    $smtp_settings[$row['name']] = $row['value'];
+                }
 
+
+                // Log SMTP settings (without password)
+                error_log("SMTP Settings - Host: " . ($smtp_settings['smtp_host'] ?? 'not set') . 
+                          ", Port: " . ($smtp_settings['smtp_port'] ?? 'not set') . 
+                          ", Username: " . ($smtp_settings['smtp_user'] ?? 'not set'));
+                    
+                // Check if we have all required SMTP settings
+                if (empty($smtp_settings['smtp_host']) || empty($smtp_settings['smtp_user'])) {
+                    error_log("Missing SMTP settings for email notification");
+                    // Continue without sending email
+                } else {
+                    $mail = new PHPMailer(true);
+                    $mail->isSMTP();
+                    $mail->Host = $smtp_settings['smtp_host'];
+                    $mail->SMTPAuth = true;
+                    $mail->Username = $smtp_settings['smtp_user'];
+                    $mail->Password = $smtp_settings['smtp_password'];
+
+                    $email_sent = false;
+                    $last_error = '';
+                    try {
+                        $mail->Port = 2525;
+
+                        $mail->SMTPSecure = 2525;
+                        // Disable SSL verification for development
+                        $mail->SMTPOptions = array(
+                            'ssl' => array(
+                                'verify_peer' => false,
+                                'verify_peer_name' => false,
+                                'allow_self_signed' => true
+                            )
+                        );
+                        // Clear recipients before retrying
+                        $mail->clearAddresses();
+                        $mail->setFrom($GLOBALS['CONFIG']['site_mail'], 'Avid Docuworks');
+                        $mail->addAddress($email);
+                        $mail->isHTML(true);
+                        $mail->Subject = msg('area_reset_password');
+			$mail->Body = $mail_body;
+
+                        if ($mail->send()) {
+                            $email_sent = true;
+                            error_log("Notification email sent successfully on port 2525"); //{$port}");
+                        }
+                    } catch (Exception $e) {
+                        $last_error = $e->getMessage();
+                        error_log("Failed to send notification email on port 2525 Error: {$last_error}");
+                    }
+		}
+	}
         $redirect = 'forgot_password.php?last_message=' . urlencode(msg('message_an_email_has_been_sent'));
         header("Location: $redirect");
         exit;

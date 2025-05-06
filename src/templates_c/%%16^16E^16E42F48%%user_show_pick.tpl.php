@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2025-04-24 00:46:08
+<?php /* Smarty version 2.6.28, created on 2025-05-06 18:10:21
          compiled from /var/www/html//templates/common/user_show_pick.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', '/var/www/html//templates/common/user_show_pick.tpl', 3, false),)), $this); ?>

@@ -368,7 +368,6 @@ if (isset($_REQUEST['submit']) and $_REQUEST['submit'] == 'adduser') {
 
     draw_footer();
 } elseif (isset($_POST['submit']) && 'Update User' == $_POST['submit']) {
-
     // Check to make sue they are either the user being modified or an admin
     if (($_POST['id'] != $_SESSION['uid']) && !$user_obj->isAdmin()) {
         header('Location: error.php?ec=4');
@@ -464,7 +463,6 @@ if (isset($_REQUEST['submit']) and $_REQUEST['submit'] == 'adduser') {
     $stmt->bindParam(':id', $_POST['id']);
     $stmt->execute();
 
-
     if ($user_obj->isAdmin()) {
         $query = "DELETE FROM {$GLOBALS['CONFIG']['db_prefix']}dept_reviewer WHERE user_id = :user_id";
         $stmt = $pdo->prepare($query);
@@ -483,7 +481,6 @@ if (isset($_REQUEST['submit']) and $_REQUEST['submit'] == 'adduser') {
     }
 
     // back to main page
-
     $last_message = urlencode(msg('message_user_successfully_updated'));
     header('Location: out.php?last_message=' . urlencode($last_message));
 } elseif (isset($_REQUEST['submit']) and $_REQUEST['submit'] == 'updatepick') {
